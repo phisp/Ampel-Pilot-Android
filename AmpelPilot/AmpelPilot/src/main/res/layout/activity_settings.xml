@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        tools:context="de.hsaugsburg.ampelpilot.SettingsActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="ScaleFactor Green" />
+
+    <EditText
+        android:id="@+id/Scale"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="20"
+        android:ems="10"
+        android:inputType="number"
+        android:digits="0123456789.,"/>
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="MinNeighbours Green" />
+
+    <EditText
+        android:id="@+id/MinN"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:text="20"
+        android:inputType="number" />
+
+
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Scale Red" />
+
+    <EditText
+        android:id="@+id/ScaleRed"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:text="10"
+        android:inputType="number"
+        android:digits="0123456789."/>
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="MinNeighbours Red" />
+
+    <EditText
+        android:id="@+id/MinNRed"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:text="10"
+        android:inputType="number" />
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Zooooom" />
+    <TextView
+        android:id="@+id/seekbarValue"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="0" />
+
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <Button
+        android:id="@+id/btnGo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Fertig" />
+</LinearLayout>
+
