@@ -238,6 +238,8 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
     public void onPause()
     {
         super.onPause();
+        mSensorManager.unregisterListener(this);
+        mSensorManager.unregisterListener(this);
         if (mOpenCvCameraView != null)
             mOpenCvCameraView.disableView();
     }
@@ -248,8 +250,8 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
     public void onResume()
     {
         super.onResume();
-       // mSensorManager.registerListener(this, accelerometer ,SensorManager.SENSOR_DELAY_UI);
-       // mSensorManager.registerListener(this, magnetometer, SensorManager.SENSOR_DELAY_UI);
+       mSensorManager.registerListener(this, accelerometer ,SensorManager.SENSOR_DELAY_UI);
+       mSensorManager.registerListener(this, magnetometer, SensorManager.SENSOR_DELAY_UI);
         if (!OpenCVLoader.initDebug()) {
             Log.d(TAG, "Internal OpenCV library not found. Using OpenCV Manager for initialization");
             OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_3_0_0, this, mLoaderCallback);
@@ -261,6 +263,8 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
 
     public void onDestroy() {
         super.onDestroy();
+        mSensorManager.unregisterListener(this);
+        mSensorManager.unregisterListener(this);
         mOpenCvCameraView.disableView();
     }
 
@@ -279,6 +283,7 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
     public Mat onCameraFrame(CvCameraViewFrame inputFrame) {
         mRgba = inputFrame.rgba();
         mGray = inputFrame.gray();
+
         //Core.transpose(mRgba, mRgbaT);
         //Imgproc.resize(mRgbaT, mRgbaF, mRgbaF.size(), 0,0, 0);
         //Core.flip(mRgbaF, mRgba, 1 );
@@ -366,15 +371,18 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
                 float pitch = orientation[1]; //roll
                 float roll = orientation[2];
 
-                z.setText("" + azimut);
+
                 x.setText("" + roll);
                 y.setText("" + pitch);
+                z.setText("" + azimut);
 
-                double diff = 0.9;
+                double diffRoll = 0.9;
+                double diffPitch = 0.9;
 
                 double valueRoll = 0;
-
-                if (2.5 < abs(roll)) {
+// roll vibriert auch wenn man das smartphone in einer position hält die auf jeden fall nicht zum scanen sein kann
+                //beispiels weise wenn man das smartphone im landscape modus hällt
+                /*if (2.5 < abs(roll)) {
                     billigerVersuch = abs(roll);
                     if (((roll <= 2.7)) && (newMillis > millis + 2000)) {
                         float t = ((0.5f * 700) - 200);
@@ -383,17 +391,18 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
                     }
                 }
                 else {
-                    if (((roll >= valueRoll + diff) || roll <= valueRoll - diff) && (newMillis > millis + 2000)) {
+                    if (((roll >= valueRoll + diffRoll) || roll <= valueRoll - diffRoll) && (newMillis > millis + 2000)) {
                         float t = ((abs(roll) * 700) - 200);
                         v.vibrate((long) (t));
                         millis = newMillis;
-
                     }
-                }
+                }*/
 
+                double valueazimut =0;
 
+// größer 2,3 und kleiner 0,6
                 double valuePitch = 1.45;
-                if (((abs(pitch) >= valuePitch + diff) || abs(pitch) <= valuePitch - (diff / 2)) && (newMillis > millis + 2000)) {
+                if (((abs(pitch) >= valuePitch + diffPitch) || abs(pitch) <= valuePitch - (diffPitch / 2)) && (newMillis > millis + 2000)) {
                     float t = ((abs(pitch) * 700) - 200);
                     v.vibrate((long) (t));
                     millis = newMillis;

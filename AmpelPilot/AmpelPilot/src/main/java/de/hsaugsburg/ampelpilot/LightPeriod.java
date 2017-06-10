@@ -70,7 +70,7 @@ public class LightPeriod {
         return temp;
     }
 
-    public void addpoint( Rect[] array, String test){
+    public void addpoint( Rect[] array){
 
         Map<Point,Integer> old = this.list;
         Log.w("step", "oneSecondCheck: 1" );
