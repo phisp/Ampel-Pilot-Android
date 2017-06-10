@@ -282,6 +282,7 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
         //Core.transpose(mRgba, mRgbaT);
         //Imgproc.resize(mRgbaT, mRgbaF, mRgbaF.size(), 0,0, 0);
         //Core.flip(mRgbaF, mRgba, 1 );
+        /*
         float zoom = (float)0;
         Size orig = mRgba.size();
         int offx = (int)(0.5 * (1.0-zoom) * orig.width);
@@ -293,17 +294,17 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
         // resize to original:
         Imgproc.resize(cropped, cropped, orig);
 
-
+*/
         MatOfRect green = new MatOfRect();
         MatOfRect red = new MatOfRect();
 
         if (mDetectorType == JAVA_DETECTOR) {
             if (mJavaDetectorGreen != null){
-                mJavaDetectorGreen.detectMultiScale(cropped, green, scaleFactor, minNeighbours, 0, // TODO: objdetect.CV_HAAR_SCALE_IMAGE
+                mJavaDetectorGreen.detectMultiScale(mRgba, green, scaleFactor, minNeighbours, 0, // TODO: objdetect.CV_HAAR_SCALE_IMAGE
                         new Size(20, 40), new Size(200,400));
             }
             if(mJavaDetectorRed!= null){
-                mJavaDetectorRed.detectMultiScale(cropped, red, scaleFactorRED, minNeighboursRED, 0,
+                mJavaDetectorRed.detectMultiScale(mRgba, red, scaleFactorRED, minNeighboursRED, 0,
                         new Size(20, 40), new Size(200,400));
             }
         }
@@ -319,7 +320,7 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
         }
         for (int i = 0; i < greenArray.length; i++)
         {
-            Imgproc.rectangle(cropped, greenArray[i].tl(), greenArray[i].br(),
+            Imgproc.rectangle(mRgba, greenArray[i].tl(), greenArray[i].br(),
                     GREEN_RECT_COLOR, 3);
         }
 
@@ -331,11 +332,11 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
         }
         for (int i = 0; i < redArray.length; i++)
         {
-            Imgproc.rectangle(cropped, redArray[i].tl(), redArray[i].br(),
+            Imgproc.rectangle(mRgba, redArray[i].tl(), redArray[i].br(),
                     RED_RECT_COLOR, 3);
         }
 
-        return cropped;
+        return mRgba;
     }
 
 
