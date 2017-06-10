@@ -20,8 +20,8 @@ public class LightPeriod {
     private int amountint;
 
     public LightPeriod(){
-        pixeldistance=200;
-        amountint = 7;
+        pixeldistance=300;
+        amountint = 10;
     }
 
     public void setPixeldistance(int distance){
@@ -70,7 +70,7 @@ public class LightPeriod {
         return temp;
     }
 
-    public void addpoint( Rect[] array){
+    public void addpoint( Rect[] array, String test){
 
         Map<Point,Integer> old = this.list;
         Log.w("step", "oneSecondCheck: 1" );
@@ -78,7 +78,11 @@ public class LightPeriod {
         Map<Point, Integer> templist = new HashMap<Point, Integer>();
         for (Point p : old.keySet()) {
             if(checkArray(array,p)){
-                templist.put(p,old.get(p)+1);
+                if(old.get(p)<=amountint){
+                    templist.put(p,old.get(p)+1);
+                }else{
+                    Log.w("step", "Wurde erkannt und gelöscht..." );
+                }
             }else if(old.get(p)>1){
                 templist.put(p,old.get(p)-1);
             }
