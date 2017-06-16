@@ -62,7 +62,7 @@ public class LightPeriod {
             if(bx && by){
                 return true;
             }else{
-                Log.w("step", "checkArray: 3"+temp );
+                Log.w("step", "checkArray: 3" + temp );
                 continue;
             }
         }
@@ -79,10 +79,10 @@ public class LightPeriod {
         for (Point p : old.keySet()) {
             if(checkArray(array,p)){
                 if(old.get(p)<=amountint){
-                    templist.put(p,old.get(p)+1);
+                    templist.put(p,old.get(p)+1);   //Punkt ist in Liste, punkt wird noch nicht als Ampel erkannt, und wird eins hochgezählt
                 }else{
                     Log.w("step", "Wurde erkannt und gelöscht..." );
-                }
+                    }
             }else if(old.get(p)>1){
                 templist.put(p,old.get(p)-1);
             }
