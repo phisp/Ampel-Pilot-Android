@@ -9,6 +9,7 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.speech.tts.TextToSpeech;
 import android.util.Log;
 import android.view.View;
@@ -31,6 +32,10 @@ import org.opencv.core.Scalar;
 import org.opencv.core.Size;
 import org.opencv.imgproc.Imgproc;
 import org.opencv.objdetect.CascadeClassifier;
+import android.support.v4.app.ActivityCompat;
+import android.Manifest;
+
+
 
 import android.os.Vibrator;
 
@@ -44,6 +49,7 @@ import static android.R.attr.button;
 
 public class LdActivity extends Activity implements CvCameraViewListener2, SensorEventListener{
 
+    public static final int MY_PERMISSIONS_REQUEST_CAMERA = 100;
     private static final String    TAG                 = "OCVSample::Activity";
     private static final Scalar GREEN_RECT_COLOR = new Scalar(0, 255, 0, 255);
     private static final Scalar    RED_RECT_COLOR     = new Scalar(255, 0, 0, 255);
@@ -51,7 +57,9 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
     private SensorManager mSensorManager;
     private Sensor mSensor;
 
-    private  LightPeriod light = new LightPeriod();
+    private  LightPeriod lightgreen = new LightPeriod();
+    private  LightPeriod lightred = new LightPeriod();
+    long SytsemTime = System.currentTimeMillis();
     private TextToSpeech tts;
     //status check code
     private int MY_DATA_CHECK_CODE = 0;
@@ -104,6 +112,7 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
     private BaseLoaderCallback  mLoaderCallback = new BaseLoaderCallback(this) {
         @Override
         public void onManagerConnected(int status) {
+
             switch (status) {
                 case LoaderCallbackInterface.SUCCESS:
                 {
@@ -182,6 +191,11 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
     public void onCreate(Bundle savedInstanceState) {
         Log.i(TAG, "called onCreate");
         super.onCreate(savedInstanceState);
+
+        ActivityCompat.requestPermissions(this,
+                new String[]{Manifest.permission.CAMERA},
+                MY_PERMISSIONS_REQUEST_CAMERA);
+
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         tts = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
             @Override
@@ -318,9 +332,15 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
         }
 
         Rect[] greenArray = green.toArray();
-        light.addpoint(greenArray);
-        if(light.checklight()){
-            speak("Grün");
+        lightgreen.addpoint(greenArray);
+        if(lightgreen.checklight()){
+            Log.w("step","onCameraFrame: "+ System.currentTimeMillis() +"   " +SytsemTime);
+            if((System.currentTimeMillis() - SytsemTime )>2000){
+                speak("Es ist Grün");
+                SytsemTime=System.currentTimeMillis();
+            }
+
+
             Log.w("step","onCameraFrame:  #################### Grün wurde erkannt bÄÄÄÄÄm");
         }
         for (int i = 0; i < greenArray.length; i++)
@@ -330,9 +350,12 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
         }
 
         Rect[] redArray = red.toArray();
-        light.addpoint(redArray);
-        if(light.checklight()){
-            speak("Rot");
+        lightred.addpoint(redArray);
+        if(lightred.checklight()){
+            if(( System.currentTimeMillis()- SytsemTime )>2000){
+                speak("Es ist Rot");
+                SytsemTime=System.currentTimeMillis();
+            }
             Log.w("step","onCameraFrame:  #################### Red wurde erkannt bÄÄÄÄÄm");
         }
         for (int i = 0; i < redArray.length; i++)
