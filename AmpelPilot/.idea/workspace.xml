@@ -12,106 +12,122 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a898c1df-8925-4d87-8a5f-0fca85b0c491" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AmpelPilot/src/main/java/de/hsaugsburg/ampelpilot/LightPeriod.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AmpelPilot/src/main/java/de/hsaugsburg/ampelpilot/SettingsActivity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AmpelPilot/src/main/res/layout/activity_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AmpelPilot/src/main/res/raw/green_cascade.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AmpelPilot/src/main/res/raw/red_cascade.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AmpelPilot/src/main/res/raw/red_cascade2.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/AmpelPilot/build/intermediates/dex/debug/classes.dex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/AmpelPilot/build/intermediates/exploded-aar/AmpelPilot/openCVLibrary300/unspecified/AndroidManifest.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/AmpelPilot/build/intermediates/exploded-aar/AmpelPilot/openCVLibrary300/unspecified/R.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/AmpelPilot/build/intermediates/exploded-aar/AmpelPilot/openCVLibrary300/unspecified/aapt/AndroidManifest.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/AmpelPilot/build/intermediates/exploded-aar/AmpelPilot/openCVLibrary300/unspecified/jars/classes.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/AmpelPilot/build/intermediates/exploded-aar/AmpelPilot/openCVLibrary300/unspecified/res/values/values.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/AmpelPilot/build/intermediates/incremental/aidl/androidTest/debug/dependency.store" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/AmpelPilot/build/intermediates/incremental/aidl/debug/dependency.store" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/AmpelPilot/build/intermediates/incremental/mergeAssets/androidTest/debug/merger.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/AmpelPilot/build/intermediates/incremental/mergeAssets/debug/merger.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/AmpelPilot/build/intermediates/incremental/mergeResourcesandroidTest/debug/merger.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/AmpelPilot/build/intermediates/incremental/mergeResourcesdebug/merger.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/AmpelPilot/build/intermediates/mockable-android-23.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/AmpelPilot/build/intermediates/pre-dexed/debug/classes-8fd031ebe8f22c4d197a922e1949374c6963b45b.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/AmpelPilot/build/outputs/apk/AmpelPilot-debug-unaligned.apk" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/bundles/debug/aapt/AndroidManifest.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/bundles/release/AndroidManifest.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/bundles/release/R.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/bundles/release/aapt/AndroidManifest.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/bundles/release/classes.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/bundles/release/res/values/values.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/incremental/aidl/androidTest/debug/dependency.store" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/incremental/aidl/debug/dependency.store" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/incremental/aidl/release/dependency.store" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/incremental/mergeAssets/androidTest/debug/merger.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/incremental/mergeAssets/debug/merger.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/incremental/mergeAssets/release/merger.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/incremental/mergeResourcesandroidTest/debug/merger.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/incremental/packageResourcesdebug/merger.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/incremental/packageResourcesrelease/merger.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/manifest/tmp/manifestMerger1430820927626017952.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/manifest/tmp/manifestMerger1958781327018304790.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/manifest/tmp/manifestMerger2292528914760926380.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/manifest/tmp/manifestMerger2465190561334025875.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/manifest/tmp/manifestMerger6716295443248261861.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/mockable-android-23.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/openCVLibrary300/build/tmp/packageDebugJar/MANIFEST.MF" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/openCVLibrary300/build/tmp/packageReleaseJar/MANIFEST.MF" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.2/taskArtifacts/cache.properties.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.2/taskArtifacts/fileHashes.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.2/taskArtifacts/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2/taskArtifacts/outputFileStates.bin" afterPath="$PROJECT_DIR$/.gradle/2.2/taskArtifacts/outputFileStates.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.2/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AmpelPilot/build/intermediates/classes/debug/de/hsaugsburg/ampelpilot/BuildConfig.class" afterPath="$PROJECT_DIR$/AmpelPilot/build/intermediates/classes/debug/de/hsaugsburg/ampelpilot/BuildConfig.class" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/generated/source/buildConfig/androidTest/debug/de/hsaugsburg/ampelpilot/test/BuildConfig.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/generated/source/buildConfig/debug/de/hsaugsburg/ampelpilot/BuildConfig.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/generated/source/r/debug/de/hsaugsburg/ampelpilot/R.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/generated/source/r/debug/org/opencv/R.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/classes/androidTest/debug/cz/nakoncisveta/eyetracksample/test/BuildConfig.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/classes/androidTest/debug/de/hsaugsburg/ampelpilot/test/BuildConfig.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cz/nakoncisveta/eyetracksample/eyedetect/LdActivity$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cz/nakoncisveta/eyetracksample/eyedetect/LdActivity.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cz/nakoncisveta/eyetracksample/eyedetect/R$attr.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cz/nakoncisveta/eyetracksample/eyedetect/R$drawable.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cz/nakoncisveta/eyetracksample/eyedetect/R$id.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cz/nakoncisveta/eyetracksample/eyedetect/R$layout.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cz/nakoncisveta/eyetracksample/eyedetect/R$raw.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cz/nakoncisveta/eyetracksample/eyedetect/R$string.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cz/nakoncisveta/eyetracksample/eyedetect/R$styleable.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/cz/nakoncisveta/eyetracksample/eyedetect/R.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/de/hsaugsburg/ampelpilot/BuildConfig.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/de/hsaugsburg/ampelpilot/LdActivity$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/de/hsaugsburg/ampelpilot/LdActivity.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/de/hsaugsburg/ampelpilot/R$attr.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/de/hsaugsburg/ampelpilot/R$drawable.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/de/hsaugsburg/ampelpilot/R$id.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/de/hsaugsburg/ampelpilot/R$layout.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/de/hsaugsburg/ampelpilot/R$raw.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/de/hsaugsburg/ampelpilot/R$string.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/de/hsaugsburg/ampelpilot/R$styleable.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/de/hsaugsburg/ampelpilot/R.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/org/opencv/R$attr.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/org/opencv/R$id.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/org/opencv/R$styleable.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/org/opencv/R.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/dex/debug/classes.dex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/exploded-aar/ampelPilot/openCVLibrary300/unspecified/AndroidManifest.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/exploded-aar/ampelPilot/openCVLibrary300/unspecified/R.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/exploded-aar/ampelPilot/openCVLibrary300/unspecified/aapt/AndroidManifest.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/exploded-aar/ampelPilot/openCVLibrary300/unspecified/jars/classes.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/exploded-aar/ampelPilot/openCVLibrary300/unspecified/res/values/values.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/exploded-aar/eyeTrackSample/openCVLibrary300/unspecified/AndroidManifest.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/exploded-aar/eyeTrackSample/openCVLibrary300/unspecified/R.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/exploded-aar/eyeTrackSample/openCVLibrary300/unspecified/aapt/AndroidManifest.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/exploded-aar/eyeTrackSample/openCVLibrary300/unspecified/jars/classes.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/exploded-aar/eyeTrackSample/openCVLibrary300/unspecified/res/values/values.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/incremental/aidl/androidTest/debug/dependency.store" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/incremental/aidl/debug/dependency.store" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/incremental/mergeAssets/androidTest/debug/merger.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/incremental/mergeAssets/debug/merger.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/incremental/mergeResourcesandroidTest/debug/merger.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/incremental/mergeResourcesdebug/merger.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/manifest/androidTest/debug/AndroidManifest.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/manifests/full/debug/AndroidManifest.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/mockable-android-23.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/pre-dexed/debug/classes-8b9aa9169823657f721621a0f534e0c592f63ed7.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/res/merged/debug/drawable/icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/res/merged/debug/layout/trafficlights_detect_surface_view.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/res/merged/debug/raw/cascade_green.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/res/merged/debug/raw/cascade_red.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/res/merged/debug/values/values.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/res/resources-debug-androidTest.ap_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/res/resources-debug.ap_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/symbols/debug/R.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/outputs/apk/AmpelPilot-debug-unaligned.apk" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/outputs/apk/AmpelPilot-debug.apk" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/outputs/logs/manifest-merger-debug-report.txt" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AmpelPilot/build/intermediates/classes/debug/de/hsaugsburg/ampelpilot/LdActivity$1.class" afterPath="$PROJECT_DIR$/AmpelPilot/build/intermediates/classes/debug/de/hsaugsburg/ampelpilot/LdActivity$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AmpelPilot/build/intermediates/classes/debug/de/hsaugsburg/ampelpilot/LdActivity.class" afterPath="$PROJECT_DIR$/AmpelPilot/build/intermediates/classes/debug/de/hsaugsburg/ampelpilot/LdActivity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AmpelPilot/build/intermediates/classes/debug/de/hsaugsburg/ampelpilot/R$attr.class" afterPath="$PROJECT_DIR$/AmpelPilot/build/intermediates/classes/debug/de/hsaugsburg/ampelpilot/R$attr.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AmpelPilot/build/intermediates/classes/debug/de/hsaugsburg/ampelpilot/R$drawable.class" afterPath="$PROJECT_DIR$/AmpelPilot/build/intermediates/classes/debug/de/hsaugsburg/ampelpilot/R$drawable.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AmpelPilot/build/intermediates/classes/debug/de/hsaugsburg/ampelpilot/R$id.class" afterPath="$PROJECT_DIR$/AmpelPilot/build/intermediates/classes/debug/de/hsaugsburg/ampelpilot/R$id.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AmpelPilot/build/intermediates/classes/debug/de/hsaugsburg/ampelpilot/R$layout.class" afterPath="$PROJECT_DIR$/AmpelPilot/build/intermediates/classes/debug/de/hsaugsburg/ampelpilot/R$layout.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AmpelPilot/build/intermediates/classes/debug/de/hsaugsburg/ampelpilot/R$raw.class" afterPath="$PROJECT_DIR$/AmpelPilot/build/intermediates/classes/debug/de/hsaugsburg/ampelpilot/R$raw.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AmpelPilot/build/intermediates/classes/debug/de/hsaugsburg/ampelpilot/R$string.class" afterPath="$PROJECT_DIR$/AmpelPilot/build/intermediates/classes/debug/de/hsaugsburg/ampelpilot/R$string.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AmpelPilot/build/intermediates/classes/debug/de/hsaugsburg/ampelpilot/R$styleable.class" afterPath="$PROJECT_DIR$/AmpelPilot/build/intermediates/classes/debug/de/hsaugsburg/ampelpilot/R$styleable.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AmpelPilot/build/intermediates/classes/debug/de/hsaugsburg/ampelpilot/R.class" afterPath="$PROJECT_DIR$/AmpelPilot/build/intermediates/classes/debug/de/hsaugsburg/ampelpilot/R.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AmpelPilot/build/intermediates/classes/debug/org/opencv/R$attr.class" afterPath="$PROJECT_DIR$/AmpelPilot/build/intermediates/classes/debug/org/opencv/R$attr.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AmpelPilot/build/intermediates/classes/debug/org/opencv/R$id.class" afterPath="$PROJECT_DIR$/AmpelPilot/build/intermediates/classes/debug/org/opencv/R$id.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AmpelPilot/build/intermediates/classes/debug/org/opencv/R$styleable.class" afterPath="$PROJECT_DIR$/AmpelPilot/build/intermediates/classes/debug/org/opencv/R$styleable.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AmpelPilot/build/intermediates/res/merged/debug/drawable/icon.png" afterPath="$PROJECT_DIR$/AmpelPilot/build/intermediates/res/merged/debug/drawable/icon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AmpelPilot/build/intermediates/res/resources-debug-androidTest.ap_" afterPath="$PROJECT_DIR$/AmpelPilot/build/intermediates/res/resources-debug-androidTest.ap_" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AmpelPilot/build/intermediates/classes/debug/org/opencv/R.class" afterPath="$PROJECT_DIR$/AmpelPilot/build/intermediates/classes/debug/org/opencv/R.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AmpelPilot/build/intermediates/res/resources-debug.ap_" afterPath="$PROJECT_DIR$/AmpelPilot/build/intermediates/res/resources-debug.ap_" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AmpelPilot/build/outputs/apk/AmpelPilot-debug.apk" afterPath="$PROJECT_DIR$/AmpelPilot/build/outputs/apk/AmpelPilot-debug.apk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/bundles/debug/classes.jar" afterPath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/bundles/debug/classes.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/classes/debug/org/opencv/BuildConfig.class" afterPath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/classes/debug/org/opencv/BuildConfig.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/classes/debug/org/opencv/engine/OpenCVEngineInterface$Stub$Proxy.class" afterPath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/classes/debug/org/opencv/engine/OpenCVEngineInterface$Stub$Proxy.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/classes/release/org/opencv/BuildConfig.class" afterPath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/classes/release/org/opencv/BuildConfig.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/classes/release/org/opencv/R.class" afterPath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/classes/release/org/opencv/R.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/classes/release/org/opencv/calib3d/StereoMatcher.class" afterPath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/classes/release/org/opencv/calib3d/StereoMatcher.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/classes/release/org/opencv/core/Core.class" afterPath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/classes/release/org/opencv/core/Core.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/classes/release/org/opencv/core/CvType.class" afterPath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/classes/release/org/opencv/core/CvType.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/classes/release/org/opencv/core/Mat.class" afterPath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/classes/release/org/opencv/core/Mat.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/classes/release/org/opencv/core/MatOfByte.class" afterPath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/classes/release/org/opencv/core/MatOfByte.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/classes/release/org/opencv/core/MatOfDMatch.class" afterPath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/classes/release/org/opencv/core/MatOfDMatch.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/classes/release/org/opencv/core/MatOfDouble.class" afterPath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/classes/release/org/opencv/core/MatOfDouble.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/classes/release/org/opencv/core/MatOfFloat.class" afterPath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/classes/release/org/opencv/core/MatOfFloat.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/classes/release/org/opencv/core/MatOfFloat4.class" afterPath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/classes/release/org/opencv/core/MatOfFloat4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/classes/release/org/opencv/core/MatOfFloat6.class" afterPath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/classes/release/org/opencv/core/MatOfFloat6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/classes/release/org/opencv/core/MatOfInt.class" afterPath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/classes/release/org/opencv/core/MatOfInt.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/classes/release/org/opencv/core/MatOfInt4.class" afterPath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/classes/release/org/opencv/core/MatOfInt4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/classes/release/org/opencv/core/MatOfKeyPoint.class" afterPath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/classes/release/org/opencv/core/MatOfKeyPoint.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/classes/release/org/opencv/core/MatOfPoint.class" afterPath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/classes/release/org/opencv/core/MatOfPoint.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/classes/release/org/opencv/core/MatOfPoint2f.class" afterPath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/classes/release/org/opencv/core/MatOfPoint2f.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/classes/release/org/opencv/core/MatOfPoint3.class" afterPath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/classes/release/org/opencv/core/MatOfPoint3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/classes/release/org/opencv/core/MatOfPoint3f.class" afterPath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/classes/release/org/opencv/core/MatOfPoint3f.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/classes/release/org/opencv/core/MatOfRect.class" afterPath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/classes/release/org/opencv/core/MatOfRect.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/classes/release/org/opencv/core/TermCriteria.class" afterPath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/classes/release/org/opencv/core/TermCriteria.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/classes/release/org/opencv/engine/OpenCVEngineInterface$Stub$Proxy.class" afterPath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/classes/release/org/opencv/engine/OpenCVEngineInterface$Stub$Proxy.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/res/resources-debug-androidTest.ap_" afterPath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/res/resources-debug-androidTest.ap_" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/classes/release/org/opencv/engine/OpenCVEngineInterface$Stub.class" afterPath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/classes/release/org/opencv/engine/OpenCVEngineInterface$Stub.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/classes/release/org/opencv/features2d/DescriptorExtractor.class" afterPath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/classes/release/org/opencv/features2d/DescriptorExtractor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/classes/release/org/opencv/features2d/FeatureDetector.class" afterPath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/classes/release/org/opencv/features2d/FeatureDetector.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/classes/release/org/opencv/imgproc/Imgproc.class" afterPath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/classes/release/org/opencv/imgproc/Imgproc.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/classes/release/org/opencv/ml/EM.class" afterPath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/classes/release/org/opencv/ml/EM.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/classes/release/org/opencv/utils/Converters.class" afterPath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/classes/release/org/opencv/utils/Converters.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/classes/release/org/opencv/videoio/Videoio.class" afterPath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/classes/release/org/opencv/videoio/Videoio.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary300/build/outputs/aar/openCVLibrary300-debug.aar" afterPath="$PROJECT_DIR$/openCVLibrary300/build/outputs/aar/openCVLibrary300-debug.aar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary300/build/outputs/aar/openCVLibrary300-release.aar" afterPath="$PROJECT_DIR$/openCVLibrary300/build/outputs/aar/openCVLibrary300-release.aar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AmpelPilot.iml" afterPath="$PROJECT_DIR$/AmpelPilot.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AmpelPilot/AmpelPilot-AmpelPilot.iml" afterPath="$PROJECT_DIR$/AmpelPilot/AmpelPilot-AmpelPilot.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AmpelPilot/build.gradle" afterPath="$PROJECT_DIR$/AmpelPilot/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AmpelPilot/build/generated/source/buildConfig/androidTest/debug/de/hsaugsburg/ampelpilot/test/BuildConfig.java" afterPath="$PROJECT_DIR$/AmpelPilot/build/generated/source/buildConfig/androidTest/debug/de/hsaugsburg/ampelpilot/test/BuildConfig.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AmpelPilot/build/generated/source/buildConfig/debug/de/hsaugsburg/ampelpilot/BuildConfig.java" afterPath="$PROJECT_DIR$/AmpelPilot/build/generated/source/buildConfig/debug/de/hsaugsburg/ampelpilot/BuildConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AmpelPilot/build/generated/source/r/debug/de/hsaugsburg/ampelpilot/R.java" afterPath="$PROJECT_DIR$/AmpelPilot/build/generated/source/r/debug/de/hsaugsburg/ampelpilot/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AmpelPilot/build/generated/source/r/debug/org/opencv/R.java" afterPath="$PROJECT_DIR$/AmpelPilot/build/generated/source/r/debug/org/opencv/R.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AmpelPilot/build/intermediates/manifest/androidTest/debug/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AmpelPilot/build/intermediates/manifest/androidTest/debug/AndroidManifest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AmpelPilot/build/intermediates/manifests/full/debug/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AmpelPilot/build/intermediates/manifests/full/debug/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AmpelPilot/build/intermediates/res/merged/debug/layout/trafficlights_detect_surface_view.xml" afterPath="$PROJECT_DIR$/AmpelPilot/build/intermediates/res/merged/debug/layout/trafficlights_detect_surface_view.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AmpelPilot/build/intermediates/res/merged/debug/values/values.xml" afterPath="$PROJECT_DIR$/AmpelPilot/build/intermediates/res/merged/debug/values/values.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AmpelPilot/build/intermediates/symbols/debug/R.txt" afterPath="$PROJECT_DIR$/AmpelPilot/build/intermediates/symbols/debug/R.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AmpelPilot/build/outputs/logs/manifest-merger-debug-report.txt" afterPath="$PROJECT_DIR$/AmpelPilot/build/outputs/logs/manifest-merger-debug-report.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AmpelPilot/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AmpelPilot/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AmpelPilot/src/main/java/de/hsaugsburg/ampelpilot/LdActivity.java" afterPath="$PROJECT_DIR$/AmpelPilot/src/main/java/de/hsaugsburg/ampelpilot/LdActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AmpelPilot/src/main/res/layout/trafficlights_detect_surface_view.xml" afterPath="$PROJECT_DIR$/AmpelPilot/src/main/res/layout/trafficlights_detect_surface_view.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AmpelPilot/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/AmpelPilot/src/main/res/values/strings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary300/build.gradle" afterPath="$PROJECT_DIR$/openCVLibrary300/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/local.properties" afterPath="$PROJECT_DIR$/local.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary300/build/generated/source/aidl/debug/org/opencv/engine/OpenCVEngineInterface.java" afterPath="$PROJECT_DIR$/openCVLibrary300/build/generated/source/aidl/debug/org/opencv/engine/OpenCVEngineInterface.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary300/build/generated/source/aidl/release/org/opencv/engine/OpenCVEngineInterface.java" afterPath="$PROJECT_DIR$/openCVLibrary300/build/generated/source/aidl/release/org/opencv/engine/OpenCVEngineInterface.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary300/build/generated/source/buildConfig/androidTest/debug/org/opencv/test/BuildConfig.java" afterPath="$PROJECT_DIR$/openCVLibrary300/build/generated/source/buildConfig/androidTest/debug/org/opencv/test/BuildConfig.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary300/build/generated/source/buildConfig/debug/org/opencv/BuildConfig.java" afterPath="$PROJECT_DIR$/openCVLibrary300/build/generated/source/buildConfig/debug/org/opencv/BuildConfig.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary300/build/generated/source/buildConfig/release/org/opencv/BuildConfig.java" afterPath="$PROJECT_DIR$/openCVLibrary300/build/generated/source/buildConfig/release/org/opencv/BuildConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary300/build/generated/source/r/androidTest/debug/org/opencv/R.java" afterPath="$PROJECT_DIR$/openCVLibrary300/build/generated/source/r/androidTest/debug/org/opencv/R.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/bundles/debug/AndroidManifest.xml" afterPath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/bundles/debug/AndroidManifest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/bundles/debug/res/values/values.xml" afterPath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/bundles/debug/res/values/values.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/manifest/androidTest/debug/AndroidManifest.xml" afterPath="$PROJECT_DIR$/openCVLibrary300/build/intermediates/manifest/androidTest/debug/AndroidManifest.xml" />
@@ -150,12 +166,10 @@
       <file leaf-file-name="LdActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/AmpelPilot/src/main/java/de/hsaugsburg/ampelpilot/LdActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-271">
-              <caret line="195" column="24" selection-start-line="195" selection-start-column="24" selection-end-line="195" selection-end-column="24" />
+            <state relative-caret-position="17">
+              <caret line="206" column="21" selection-start-line="206" selection-start-column="21" selection-end-line="206" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#8783#8904#0" expanded="true" />
-                <element signature="e#8903#8904#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -164,8 +178,8 @@
       <file leaf-file-name="Activity.class" pinned="false" current-in-tab="false">
         <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/platforms/android-23/android.jar!/android/app/Activity.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="393">
-              <caret line="524" column="0" selection-start-line="524" selection-start-column="0" selection-end-line="524" selection-end-column="0" />
+            <state relative-caret-position="11186">
+              <caret line="1004" column="0" selection-start-line="1004" selection-start-column="0" selection-end-line="1004" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -174,8 +188,8 @@
       <file leaf-file-name="Instrumentation.class" pinned="false" current-in-tab="false">
         <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/platforms/android-23/android.jar!/android/app/Instrumentation.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="94" column="95" selection-start-line="94" selection-start-column="95" selection-end-line="94" selection-end-column="95" />
+            <state relative-caret-position="748">
+              <caret line="94" column="44" selection-start-line="94" selection-start-column="44" selection-end-line="94" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -184,8 +198,8 @@
       <file leaf-file-name="Handler.class" pinned="false" current-in-tab="false">
         <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/platforms/android-23/android.jar!/android/os/Handler.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="17" column="57" selection-start-line="17" selection-start-column="57" selection-end-line="17" selection-end-column="57" />
+            <state relative-caret-position="153">
+              <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -194,7 +208,7 @@
       <file leaf-file-name="LightPeriod.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AmpelPilot/src/main/java/de/hsaugsburg/ampelpilot/LightPeriod.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
+            <state relative-caret-position="1156">
               <caret line="78" column="11" selection-start-line="78" selection-start-column="11" selection-end-line="78" selection-end-column="11" />
               <folding />
             </state>
@@ -213,21 +227,21 @@
       </file>
       <file leaf-file-name="activity_settings.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AmpelPilot/src/main/res/layout/activity_settings.xml">
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
+            <state relative-caret-position="833">
               <caret line="49" column="35" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="35" />
               <folding />
             </state>
+          </provider>
+          <provider editor-type-id="android-designer2">
+            <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="SettingsActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AmpelPilot/src/main/java/de/hsaugsburg/ampelpilot/SettingsActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
+            <state relative-caret-position="969">
               <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
               <folding />
             </state>
@@ -236,21 +250,21 @@
       </file>
       <file leaf-file-name="trafficlights_detect_surface_view.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AmpelPilot/src/main/res/layout/trafficlights_detect_surface_view.xml">
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="708">
+            <state relative-caret-position="629">
               <caret line="37" column="4" selection-start-line="37" selection-start-column="4" selection-end-line="37" selection-end-column="4" />
               <folding />
             </state>
+          </provider>
+          <provider editor-type-id="android-designer2">
+            <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AmpelPilot/src/main/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="609">
+            <state relative-caret-position="816">
               <caret line="48" column="87" selection-start-line="48" selection-start-column="87" selection-end-line="48" selection-end-column="87" />
               <folding />
             </state>
@@ -281,7 +295,7 @@
   <component name="GradleLocalSettings">
     <option name="myGradleHomes">
       <map>
-        <entry key="$PROJECT_DIR$" value="C:\Users\Maximilian\.gradle\wrapper\dists\gradle-3.3-all\55gk2rcmfc6p2dg9u9ohc3hw9\gradle-3.3" />
+        <entry key="$PROJECT_DIR$" value="C:\Users\johannes\.gradle\wrapper\dists\gradle-3.3-all\55gk2rcmfc6p2dg9u9ohc3hw9\gradle-3.3" />
       </map>
     </option>
     <option name="myGradleVersions">
@@ -441,10 +455,6 @@
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="processDebugResources" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="transformNativeLibsWithStripDebugSymbolForRelease" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Runs lint on all variants." />
@@ -842,10 +852,6 @@
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="transformNativeLibsWithStripDebugSymbolForDebug" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="compileDebugNdk" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
@@ -1147,10 +1153,6 @@
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/AmpelPilot" />
                 <option name="name" value="processDebugResources" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/AmpelPilot" />
-                <option name="name" value="transformNativeLibsWithStripDebugSymbolForRelease" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Runs lint on all variants." />
@@ -1519,10 +1521,6 @@
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/AmpelPilot" />
-                <option name="name" value="transformNativeLibsWithStripDebugSymbolForDebug" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/AmpelPilot" />
                 <option name="name" value="compileDebugNdk" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
@@ -1844,10 +1842,6 @@
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/openCVLibrary300" />
                 <option name="name" value="processDebugResources" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/openCVLibrary300" />
-                <option name="name" value="transformNativeLibsWithStripDebugSymbolForRelease" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Runs lint on all variants." />
@@ -2197,10 +2191,6 @@
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/openCVLibrary300" />
-                <option name="name" value="transformNativeLibsWithStripDebugSymbolForDebug" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/openCVLibrary300" />
                 <option name="name" value="compileDebugNdk" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
@@ -2399,6 +2389,7 @@
         <entry key="C:\Users\Maximilian\Documents\GitLab\Ampel-Assistenzsystem\AmpelPilot" value="5984397786928" />
         <entry key="C:\Users\Maximilian\Downloads\AmpelPilot\ampelPilot" value="5984397786928" />
         <entry key="C:\Users\Maximilian\Downloads\eyeTrackSample\eyeTrackSample" value="5984292260177" />
+        <entry key="D:\Daten\Git\Ampel-Assistenzsystem.app\AmpelPilot" value="5990790287593" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -2799,10 +2790,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-11" />
-    <option name="y" value="-11" />
-    <option name="width" value="2182" />
-    <option name="height" value="1402" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -2848,9 +2839,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -3106,17 +3094,21 @@
       <pane id="AndroidView">
         <subPane />
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="device.picker.selection" value="73QDU16811001506" />
+    <property name="device.picker.selection" value="330012821823c26f" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="android.sdk-updates" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="DEBUGGABLE_DEVICE" value="huawei-frd_l09-73QDU16811001506" />
     <property name="DEBUGGABLE_PROCESS" value="de.hsaugsburg.ampelpilot" />
     <property name="SHOW_ALL_PROCESSES" value="false" />
     <property name="DEBUGGER_ID" value="Auto" />
+    <property name="show.do.not.ask.upgrade.gradle.plugin" value="2.3.1" />
   </component>
   <component name="RecentsManager">
     <key name="android.template.packageName">
@@ -3505,7 +3497,7 @@
         <option name="SHOW_OPTIMIZED_WARNING" value="true" />
       </Native>
       <Profilers>
-        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
+        <option name="ENABLE_ADVANCED_PROFILING" value="false" />
         <option name="SUPPORT_LIB_ENABLED" value="true" />
         <option name="INSTRUMENTATION_ENABLED" value="true" />
       </Profilers>
@@ -3571,29 +3563,28 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-11" y="-11" width="2182" height="1402" extended-state="6" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932073" sideWeight="0.49808612" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31040412" sideWeight="0.4550239" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3088737" sideWeight="0.45234492" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3955288" sideWeight="0.51339716" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3088737" sideWeight="0.54765505" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28374892" sideWeight="0.7095694" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33779904" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932073" sideWeight="0.4923445" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932073" sideWeight="0.49617225" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292789" sideWeight="0.49326348" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32764506" sideWeight="0.4871407" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16124402" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16111952" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3955288" sideWeight="0.48660287" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39419794" sideWeight="0.48660287" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -3601,6 +3592,7 @@
       <window_info id="Hierarchy" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24976076" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33779904" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932073" sideWeight="0.49617225" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -3621,14 +3613,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/AmpelPilot/src/main/java/de/hsaugsburg/ampelpilot/LdActivity.java</url>
-          <line>214</line>
-          <properties />
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="15" />
     </breakpoint-manager>
     <watches-manager />
@@ -3636,14 +3620,14 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/eyeTrackSample/src/main/res/raw/lbpcascade_frontalface.xml" />
     <entry file="file://$PROJECT_DIR$/AmpelPilot/src/main/res/layout/trafficlights_detect_surface_view.xml">
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/eyeTrackSample/src/main/res/raw/haarcascade_lefteye_2splits.xml" />
@@ -3776,7 +3760,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3802,7 +3785,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="6" column="53" selection-start-line="6" selection-start-column="53" selection-end-line="6" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3839,7 +3821,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3870,18 +3851,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-          <folding>
-            <element signature="e#195#196#0" expanded="false" />
-            <element signature="e#221#222#0" expanded="false" />
-            <element signature="e#556#557#0" expanded="false" />
-            <element signature="e#594#595#0" expanded="false" />
-            <element signature="e#628#629#0" expanded="false" />
-            <element signature="e#668#669#0" expanded="false" />
-            <element signature="e#1285#1286#0" expanded="false" />
-            <element signature="e#1324#1325#0" expanded="false" />
-            <element signature="e#1370#1371#0" expanded="false" />
-            <element signature="e#1417#1418#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3889,16 +3858,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="565">
           <caret line="51" column="17" selection-start-line="51" selection-start-column="17" selection-end-line="51" selection-end-column="17" />
-          <folding>
-            <element signature="e#1237#1238#0" expanded="true" />
-            <element signature="e#1275#1276#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AmpelPilot/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="609">
+        <state relative-caret-position="816">
           <caret line="48" column="87" selection-start-line="48" selection-start-column="87" selection-end-line="48" selection-end-column="87" />
           <folding />
         </state>
@@ -3909,21 +3874,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/AmpelPilot/src/main/java/de/hsaugsburg/ampelpilot/LightPeriod.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
+        <state relative-caret-position="1156">
           <caret line="78" column="11" selection-start-line="78" selection-start-column="11" selection-end-line="78" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AmpelPilot/src/main/res/layout/trafficlights_detect_surface_view.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="708">
+        <state relative-caret-position="629">
           <caret line="37" column="4" selection-start-line="37" selection-start-column="4" selection-end-line="37" selection-end-column="4" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AmpelPilot/src/main/res/raw/red_cascade2.xml">
@@ -3935,27 +3900,27 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AmpelPilot/src/main/res/layout/activity_settings.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
+        <state relative-caret-position="833">
           <caret line="49" column="35" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="35" />
           <folding />
         </state>
       </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
     </entry>
     <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/platforms/android-23/android.jar!/android/os/Handler.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="17" column="57" selection-start-line="17" selection-start-column="57" selection-end-line="17" selection-end-column="57" />
+        <state relative-caret-position="153">
+          <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AmpelPilot/src/main/java/de/hsaugsburg/ampelpilot/SettingsActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
+        <state relative-caret-position="969">
           <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
           <folding />
         </state>
@@ -3963,28 +3928,26 @@
     </entry>
     <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/platforms/android-23/android.jar!/android/app/Activity.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="524" column="0" selection-start-line="524" selection-start-column="0" selection-end-line="524" selection-end-column="0" />
+        <state relative-caret-position="11186">
+          <caret line="1004" column="0" selection-start-line="1004" selection-start-column="0" selection-end-line="1004" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/platforms/android-23/android.jar!/android/app/Instrumentation.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="94" column="95" selection-start-line="94" selection-start-column="95" selection-end-line="94" selection-end-column="95" />
+        <state relative-caret-position="748">
+          <caret line="94" column="44" selection-start-line="94" selection-start-column="44" selection-end-line="94" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AmpelPilot/src/main/java/de/hsaugsburg/ampelpilot/LdActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-271">
-          <caret line="195" column="24" selection-start-line="195" selection-start-column="24" selection-end-line="195" selection-end-column="24" />
+        <state relative-caret-position="17">
+          <caret line="206" column="21" selection-start-line="206" selection-start-column="21" selection-end-line="206" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#8783#8904#0" expanded="true" />
-            <element signature="e#8903#8904#0" expanded="true" />
           </folding>
         </state>
       </provider>

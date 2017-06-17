@@ -1,6 +1,6 @@
 /*
  * This file is auto-generated.  DO NOT MODIFY.
- * Original file: C:\\Users\\Maximilian\\Documents\\GitLab\\Ampel-Assistenzsystem\\Ampel-Assistenzsystem\\AmpelPilot\\openCVLibrary300\\src\\main\\aidl\\org\\opencv\\engine\\OpenCVEngineInterface.aidl
+ * Original file: D:\\Daten\\Git\\Ampel-Assistenzsystem.app\\AmpelPilot\\openCVLibrary300\\src\\main\\aidl\\org\\opencv\\engine\\OpenCVEngineInterface.aidl
  */
 package org.opencv.engine;
 /**
