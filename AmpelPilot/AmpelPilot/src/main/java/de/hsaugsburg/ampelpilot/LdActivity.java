@@ -201,11 +201,11 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
             @Override
             public void onInit(int status) {
                 if (status == TextToSpeech.SUCCESS) {
-                    int result = tts.setLanguage(Locale.US);
+                    int result = tts.setLanguage(Locale.GERMANY);
                     if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
                         Log.e("TTS", "This Language is not supported");
                     }
-                    speak("nice");
+                    //speak("App gestartet");
 
                 } else {
                     Log.e("TTS", "Initilization Failed!");
@@ -406,28 +406,59 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
 
                 //roll kleiner 1.4
                 double valueRoll = 1.4;
-                if ((abs(roll) <= valueRoll) && (newMillis > millis + 2000)) {
+                if ((abs(roll) <= valueRoll) && (newMillis > millis + 1500)) {
                     float t = ( 150/ (abs(roll)) -20);
                     v.vibrate((long) (t));
                     millis = newMillis;
-
+                    if((System.currentTimeMillis() - SytsemTime )>5000){
+                        speak("Winkel zu Niedrig");
+                        SytsemTime=System.currentTimeMillis();
+                    }
                 }
+
                 //roll größer 2
-                if ((abs(roll) >= valueRoll + diffRoll) && (newMillis > millis + 2000)) {
+                if ((abs(roll) >= valueRoll + diffRoll) && (newMillis > millis + 1500)) {
                     float t = ( (abs(roll) *100) -50);
                     v.vibrate((long) (t));
                     millis = newMillis;
-
+                    if((System.currentTimeMillis() - SytsemTime )>5000){
+                        speak("Winkel zu Hoch");
+                        SytsemTime=System.currentTimeMillis();
+                    }
                 }
                 double valueazimut =0;
 
-                // größer 0,2
+                //pitch größer 0,2
                 double valuePitch = 0;
-                if (((abs(pitch) >= valuePitch + diffPitch) || abs(pitch) <= valuePitch - (diffPitch / 2)) && (newMillis > millis + 2000)) {
+                if ((( pitch <= valuePitch - diffPitch)) && (newMillis > millis + 1500)) {
                     float t = ((abs(pitch) * 1000) - 50);
                     v.vibrate((long) (t));
                     millis = newMillis;
+                    if((System.currentTimeMillis() - SytsemTime )>5000){
+                        speak("Zu weit nach rechts geneigt");
+                        SytsemTime=System.currentTimeMillis();
+                    }
+                }
+                if (((pitch >= valuePitch + diffPitch)) && (newMillis > millis + 1500)) {
+                    float t = ((abs(pitch) * 1000) - 50);
+                    v.vibrate((long) (t));
+                    millis = newMillis;
+                    if((System.currentTimeMillis() - SytsemTime )>5000){
+                        speak("Zu weit nach links geneigt");
+                        SytsemTime=System.currentTimeMillis();
+                    }
+                }
 
+                // Azimut größer 2
+                double valueAzimut = 2.3;
+                if ((abs(azimut) >= valueAzimut) && (newMillis > millis + 1500)) {
+                    float t = ( 500);
+                    v.vibrate((long) (t));
+                    millis = newMillis;
+                    if((System.currentTimeMillis() - SytsemTime )>5000){
+                        speak("Drehen Sie das Handy");
+                        SytsemTime=System.currentTimeMillis();
+                    }
                 }
             }
         }
