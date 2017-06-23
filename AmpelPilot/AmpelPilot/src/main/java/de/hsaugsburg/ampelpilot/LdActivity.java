@@ -9,6 +9,8 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.provider.Settings;
 import android.speech.tts.TextToSpeech;
 import android.util.Log;
 import android.view.View;
@@ -107,9 +109,9 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
                     Log.i(TAG, "OpenCV loaded successfully");
                     try {
                         // load cascade file from application resources
-                        InputStream is = getResources().openRawResource(R.raw.cascade_green3);
+                        InputStream is = getResources().openRawResource(R.raw.green_cascade);
                         File cascadeDir = getDir("cascade", Context.MODE_PRIVATE);
-                        mCascadeFileGreen = new File(cascadeDir, "cascade_green3.xml");
+                        mCascadeFileGreen = new File(cascadeDir, "cascade_green.xml");
                         FileOutputStream os = new FileOutputStream(mCascadeFileGreen);
 
                         byte[] buffer = new byte[4096];
@@ -121,9 +123,9 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
                         os.close();
 
                         // load cascade file from application resources
-                        InputStream ise = getResources().openRawResource(R.raw.cascade_red3);
+                        InputStream ise = getResources().openRawResource(R.raw.red_cascade2);
                         File cascadeDirGreen = getDir("cascade", Context.MODE_PRIVATE);
-                        mCascadeFileRed = new File(cascadeDirGreen, "cascade_red3.xml");
+                        mCascadeFileRed = new File(cascadeDirGreen, "cascade_red.xml");
                         FileOutputStream ose = new FileOutputStream(mCascadeFileRed);
 
                         while ((bytesRead = ise.read(buffer)) != -1) {
@@ -174,15 +176,15 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
         Log.i(TAG, "Instantiated new " + this.getClass());
     }
 
-    /** Called when the activity is first created. */
+
+    /**
+     * Called when the activity is first created.
+     */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         Log.i(TAG, "called onCreate");
         super.onCreate(savedInstanceState);
 
-        ActivityCompat.requestPermissions(this,
-                new String[]{Manifest.permission.CAMERA},
-                MY_PERMISSIONS_REQUEST_CAMERA);
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         tts = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
@@ -271,6 +273,8 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
     public void onCameraViewStarted(int width, int height) {
         mGray = new Mat(height, width, CvType.CV_8UC4);
         mRgba = new Mat(height, width, CvType.CV_8UC4);
+        mRgbaT = new Mat(height, width, CvType.CV_8UC4);
+        mRgbaF = new Mat(height, width, CvType.CV_8UC4);
     }
 
     public void onCameraViewStopped() {
@@ -410,7 +414,6 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
                         SytsemTime=System.currentTimeMillis();
                     }
                 }
-                double valueazimut =0;
 
                 //pitch größer 0,2
                 double valuePitch = 0;
