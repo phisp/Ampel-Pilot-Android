@@ -399,34 +399,32 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
                 y.setText("" + pitch);
                 z.setText("" + azimut);
 
-                double diffRoll = 0.9;
-                double diffPitch = 0.9;
 
-                double valueRoll = 0;
-// roll vibriert auch wenn man das smartphone in einer position hält die auf jeden fall nicht zum scanen sein kann
-                //beispiels weise wenn man das smartphone im landscape modus hällt
-                /*if (2.5 < abs(roll)) {
-                    billigerVersuch = abs(roll);
-                    if (((roll <= 2.7)) && (newMillis > millis + 2000)) {
-                        float t = ((0.5f * 700) - 200);
-                        v.vibrate((long) (t));
-                        millis = newMillis;
-                    }
+                double diffRoll = 0.6;
+                double diffPitch = 0.2;
+
+
+                //roll kleiner 1.4
+                double valueRoll = 1.4;
+                if ((abs(roll) <= valueRoll) && (newMillis > millis + 2000)) {
+                    float t = ( 150/ (abs(roll)) -20);
+                    v.vibrate((long) (t));
+                    millis = newMillis;
+
                 }
-                else {
-                    if (((roll >= valueRoll + diffRoll) || roll <= valueRoll - diffRoll) && (newMillis > millis + 2000)) {
-                        float t = ((abs(roll) * 700) - 200);
-                        v.vibrate((long) (t));
-                        millis = newMillis;
-                    }
-                }*/
+                //roll größer 2
+                if ((abs(roll) >= valueRoll + diffRoll) && (newMillis > millis + 2000)) {
+                    float t = ( (abs(roll) *100) -50);
+                    v.vibrate((long) (t));
+                    millis = newMillis;
 
+                }
                 double valueazimut =0;
 
-// größer 2,3 und kleiner 0,6
-                double valuePitch = 1.45;
+                // größer 0,2
+                double valuePitch = 0;
                 if (((abs(pitch) >= valuePitch + diffPitch) || abs(pitch) <= valuePitch - (diffPitch / 2)) && (newMillis > millis + 2000)) {
-                    float t = ((abs(pitch) * 700) - 200);
+                    float t = ((abs(pitch) * 1000) - 50);
                     v.vibrate((long) (t));
                     millis = newMillis;
 
