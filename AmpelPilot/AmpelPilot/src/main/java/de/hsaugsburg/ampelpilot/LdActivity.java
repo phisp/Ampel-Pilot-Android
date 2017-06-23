@@ -248,6 +248,7 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
 
         btnSettings.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
+                startActivity(new Intent(LdActivity.this, SettingsActivity.class));
                 finish();
             }
         });
