@@ -9,7 +9,6 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.speech.tts.TextToSpeech;
 import android.util.Log;
 import android.view.View;
@@ -55,7 +54,6 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
     private static final Scalar    RED_RECT_COLOR     = new Scalar(255, 0, 0, 255);
     public static final int        JAVA_DETECTOR       = 0;
     private SensorManager mSensorManager;
-    private Sensor mSensor;
 
     private  LightPeriod lightgreen = new LightPeriod();
     private  LightPeriod lightred = new LightPeriod();
@@ -63,12 +61,9 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
     private TextToSpeech tts;
     //status check code
     private int MY_DATA_CHECK_CODE = 0;
-    int method = 0;
 
     private Mat                    mRgba;
     private Mat                    mGray;
-    private Mat                    mRgbaT;
-    private Mat                    mRgbaF;
     private File                   mCascadeFileGreen;
     private File                   mCascadeFileRed;
     private CascadeClassifier mJavaDetectorGreen;
@@ -79,8 +74,6 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
     Sensor accelerometer;
     Sensor magnetometer;
     Vibrator v;
-    float pi = 3.142f;
-    double billigerVersuch;
 
 
     private TextView x;
@@ -89,8 +82,6 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
 
     private double                  scaleFactor;
     private int                     minNeighbours;
-
-    private int                      Zoom;
 
     private double                  scaleFactorRED;
     private int                     minNeighboursRED;
@@ -106,9 +97,6 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
 
     long millis = System.currentTimeMillis();
 
-    double xCenter = -1;
-    double yCenter = -1;
-
     private BaseLoaderCallback  mLoaderCallback = new BaseLoaderCallback(this) {
         @Override
         public void onManagerConnected(int status) {
@@ -119,9 +107,9 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
                     Log.i(TAG, "OpenCV loaded successfully");
                     try {
                         // load cascade file from application resources
-                        InputStream is = getResources().openRawResource(R.raw.green_cascade);
+                        InputStream is = getResources().openRawResource(R.raw.cascade_green3);
                         File cascadeDir = getDir("cascade", Context.MODE_PRIVATE);
-                        mCascadeFileGreen = new File(cascadeDir, "cascade_green.xml");
+                        mCascadeFileGreen = new File(cascadeDir, "cascade_green3.xml");
                         FileOutputStream os = new FileOutputStream(mCascadeFileGreen);
 
                         byte[] buffer = new byte[4096];
@@ -133,9 +121,9 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
                         os.close();
 
                         // load cascade file from application resources
-                        InputStream ise = getResources().openRawResource(R.raw.red_cascade2);
+                        InputStream ise = getResources().openRawResource(R.raw.cascade_red3);
                         File cascadeDirGreen = getDir("cascade", Context.MODE_PRIVATE);
-                        mCascadeFileRed = new File(cascadeDirGreen, "cascade_red.xml");
+                        mCascadeFileRed = new File(cascadeDirGreen, "cascade_red3.xml");
                         FileOutputStream ose = new FileOutputStream(mCascadeFileRed);
 
                         while ((bytesRead = ise.read(buffer)) != -1) {
@@ -233,8 +221,6 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
         minNeighboursRED = i.getIntExtra("MinNeighboursRED",15);
         scaleFactorRED = i.getDoubleExtra("ScaleFactorRED",15);
 
-        Zoom = i.getIntExtra("ZoomFactor",10);
-
         v = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
         // Vibrate for 500 milliseconds
         v.vibrate(500);
@@ -285,8 +271,6 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
     public void onCameraViewStarted(int width, int height) {
         mGray = new Mat(height, width, CvType.CV_8UC4);
         mRgba = new Mat(height, width, CvType.CV_8UC4);
-        mRgbaT = new Mat(height, width, CvType.CV_8UC4);
-        mRgbaF = new Mat(height, width, CvType.CV_8UC4);
     }
 
     public void onCameraViewStopped() {
