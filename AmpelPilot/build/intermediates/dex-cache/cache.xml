@@ -3,93 +3,93 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\johannes\AppData\Local\Android\sdk\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.2\constraint-layout-solver-1.0.2.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
-        <dex dex="D:\Daten\Git\Ampel-Assistenzsystem.app\AmpelPilot\AmpelPilot\build\intermediates\transforms\dex\debug\folders\1000\10\constraint-layout-solver-1.0.2_c44d7a7c5865f8d99eaac40ede54ad0d05b7f1dc\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\johannes\.android\build-cache\bf68bc6b0d43dd7e532598a0940f5b5dbe860b5a\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
-        <dex dex="D:\Daten\Git\Ampel-Assistenzsystem.app\AmpelPilot\AmpelPilot\build\intermediates\transforms\dex\debug\folders\1000\10\classes_658856ba9667e25055be05b434efa4010287191e\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\johannes\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.4.0\support-annotations-23.4.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
-        <dex dex="D:\Daten\Git\Ampel-Assistenzsystem.app\AmpelPilot\AmpelPilot\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-23.4.0_8303faad29e944d2067b04c308e78a794928bb10\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\johannes\.android\build-cache\b999937bb493f39dacf80897d58e63b761ba1a9b\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
-        <dex dex="D:\Daten\Git\Ampel-Assistenzsystem.app\AmpelPilot\AmpelPilot\build\intermediates\transforms\dex\debug\folders\1000\10\classes_e20982b11907bfb47d8544af2b276e47ec61d670\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\johannes\.android\build-cache\6a234bb2ef335e6950fe7cd31ac00e533d31f561\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
-        <dex dex="D:\Daten\Git\Ampel-Assistenzsystem.app\AmpelPilot\AmpelPilot\build\intermediates\transforms\dex\debug\folders\1000\10\classes_59344a2a8c89bc5b7e51aa7b9d060fd004d14ae9\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\Daten\Git\Ampel-Assistenzsystem.app\AmpelPilot\AmpelPilot\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
-        <dex dex="D:\Daten\Git\Ampel-Assistenzsystem.app\AmpelPilot\AmpelPilot\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_535edcfb09268a81ed75725493dd8d1c5ed8f55d\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\johannes\.android\build-cache\b77b3614bdbd9061f47ca2a05a72b049302a3d48\output\jars\libs\internal_impl-23.4.0.jar"
+        jar="D:\Users\Quirin\.android\build-cache\400b099bf193380ad9aa6ce69d161b48c4fa8c0c\output\jars\libs\internal_impl-23.4.0.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
         sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
-        <dex dex="D:\Daten\Git\Ampel-Assistenzsystem.app\AmpelPilot\AmpelPilot\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.4.0_128a5265e3d76a9494a571deed85186111ca17d1\classes.dex" />
+        <dex dex="D:\Projects\Ampel-Assistenzsystem.ampelPilot\AmpelPilot\AmpelPilot\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.4.0_48dc99d555017a675d65bcd7bb81fc5c99282ab4\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="D:\Daten\Git\Ampel-Assistenzsystem.app\AmpelPilot\AmpelPilot\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jar="D:\Projects\Ampel-Assistenzsystem.ampelPilot\AmpelPilot\AmpelPilot\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="f51dca76be8add0cf78658e408fd9ffbefdd9b7c">
-        <dex dex="D:\Daten\Git\Ampel-Assistenzsystem.app\AmpelPilot\AmpelPilot\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_4bb398f5042df7ba12108711d1d7ac9c204285fc\classes.dex" />
+        sha1="0532f6c336a5fce571337340d99528e88562823c">
+        <dex dex="D:\Projects\Ampel-Assistenzsystem.ampelPilot\AmpelPilot\AmpelPilot\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_a084a21cd6252a2819d76e5808299297dda56104\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\johannes\.android\build-cache\b77b3614bdbd9061f47ca2a05a72b049302a3d48\output\jars\classes.jar"
+        jar="D:\Users\Quirin\.android\build-cache\400b099bf193380ad9aa6ce69d161b48c4fa8c0c\output\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
         sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
-        <dex dex="D:\Daten\Git\Ampel-Assistenzsystem.app\AmpelPilot\AmpelPilot\build\intermediates\transforms\dex\debug\folders\1000\10\classes_62bb529b8b2931af3033de43ddc38a48a0892eb8\classes.dex" />
+        <dex dex="D:\Projects\Ampel-Assistenzsystem.ampelPilot\AmpelPilot\AmpelPilot\build\intermediates\transforms\dex\debug\folders\1000\10\classes_4594bb47b68a6ea58aa1dca23f821cf3596f6f79\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\johannes\.android\build-cache\7062ccca0dfc4f6aa2673e51dce5a3ce9a44db9a\output\jars\classes.jar"
+        jar="D:\Users\Quirin\.android\build-cache\81d3bf692617f94e8e11d3c682987ed73598947d\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
+        <dex dex="D:\Projects\Ampel-Assistenzsystem.ampelPilot\AmpelPilot\AmpelPilot\build\intermediates\transforms\dex\debug\folders\1000\10\classes_a0ab848a5de16bbb49d93839b0e461a71e67e10d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Users\Quirin\.android\build-cache\00657cf12e9f2ed8768ae0cf7a377476e984437b\output\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
         sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
-        <dex dex="D:\Daten\Git\Ampel-Assistenzsystem.app\AmpelPilot\AmpelPilot\build\intermediates\transforms\dex\debug\folders\1000\10\classes_51b36f7e38d019e602ff22a8555387d5638dceb2\classes.dex" />
+        <dex dex="D:\Projects\Ampel-Assistenzsystem.ampelPilot\AmpelPilot\AmpelPilot\build\intermediates\transforms\dex\debug\folders\1000\10\classes_834811bfa3452b719a0940834dd3ab2c858e1179\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Projects\Ampel-Assistenzsystem.ampelPilot\AmpelPilot\AmpelPilot\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
+        <dex dex="D:\Projects\Ampel-Assistenzsystem.ampelPilot\AmpelPilot\AmpelPilot\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_0320fa99b3e0b5a2950edefc87ecb44bc233d2e2\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Users\Quirin\.android\build-cache\aa33a0df6724599ba663ebab7d53da5465f1dbfa\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="D:\Projects\Ampel-Assistenzsystem.ampelPilot\AmpelPilot\AmpelPilot\build\intermediates\transforms\dex\debug\folders\1000\10\classes_0e4bb0e625d29933afc7904c04741361581ed5f6\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Android\AndroidSDK\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.2\constraint-layout-solver-1.0.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="D:\Projects\Ampel-Assistenzsystem.ampelPilot\AmpelPilot\AmpelPilot\build\intermediates\transforms\dex\debug\folders\1000\10\constraint-layout-solver-1.0.2_2cb302efbd7fcb78522ac27954a10a916b0af854\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Users\Quirin\.android\build-cache\f610b86fad54d1f862b3e017256a664bbf00c537\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="D:\Projects\Ampel-Assistenzsystem.ampelPilot\AmpelPilot\AmpelPilot\build\intermediates\transforms\dex\debug\folders\1000\10\classes_00f86dc0eb3a65c1710168ab1b311bb3c35ea0fa\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Android\AndroidSDK\extras\android\m2repository\com\android\support\support-annotations\23.4.0\support-annotations-23.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
+        <dex dex="D:\Projects\Ampel-Assistenzsystem.ampelPilot\AmpelPilot\AmpelPilot\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-23.4.0_3db0ac4f92834b66d9106af7609355459e39a156\classes.dex" />
     </item>
 
 </items>

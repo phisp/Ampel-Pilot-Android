@@ -8,8 +8,6 @@ android {
         applicationId "de.hsaugsburg.ampelpilot"
         minSdkVersion 20
         targetSdkVersion 23
-
-
     }
 
     buildTypes {
