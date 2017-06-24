@@ -30,22 +30,22 @@ public class SettingsActivity extends Activity {
     private int startValue_Scale = 1;
     private int startValue_MinN = 3;
 
-    private String helpText = "Bitte halten Sie das Handy im Landschaftsmodus und halten Sie die Kamera Richtung Ampel.\n" +
+    private String helpText = "Bitte halten Sie das Handy im Landschaftsmodus und halten Sie die Kamera Richtung Fußgängerampel.\n" +
             "\n" +
-            "Um die Ampel wird ein roter oder grüner Kasten gezeichnet und " +
-            "eine Stimme teilt Ihnen mit ob die Ampel Rot oder Grün ist.\n" +
+            "Um die Fußgängerampel wird ein roter oder grüner Kasten gezeichnet und " +
+            "eine Stimme teilt Ihnen mit, ob die Fußgängerampel rot oder grün ist.\n" +
             "\n" +
-            "Falls Sie das Handy falsch halten wird es vibrieren und eine Sprachnachricht wird abgespielt.\n" +
+            "Falls Sie das Handy falsch halten, wird es vibrieren und eine Sprachnachricht abspielen.\n" +
             "\n" +
             "In den Settings können Sie die Werte zur Erkennung umstellen. ";
 
-    private String helpTextScale = "Standard Wert: 2\n" + "\nJe kleiner der Wert ist, umso genauer wird nach einer Ampel gesucht.\n"
+    private String helpTextScale = "Standard Wert: 2\n" + "\nJe kleiner der Wert ist, umso genauer wird nach einer Fußgängerampel gesucht.\n"
             + "Allerdings wird die App dadurch langsamer.";
 
-    private String helpTextMinN = "Standard Wert: 5\n" + "\nJe größer der Wert ist, umso genauer muss die App eine Amepl erkennen.\n"
+    private String helpTextMinN = "Standard Wert: 5\n" + "\nJe größer der Wert ist, umso genauer muss die App eine Fußgängerampel erkennen.\n"
             + "";
 
-    private String helpTextFrames = "Standard Wert: 5\n" + "\nWert gibt an, wie oft eine Ampel erkannt werden muss," +
+    private String helpTextFrames = "Standard Wert: 5\n" + "\nWert gibt an, wie oft eine Fußgängerampel erkannt werden muss," +
             " bevor ein akustisches Signal ausgegeben wird.\n";
     private SharedPreferences prefs;
     private SharedPreferences.Editor editor;
@@ -143,6 +143,7 @@ public class SettingsActivity extends Activity {
                 editor.putInt("Frames",seekBar_Frames.getProgress() + startValue_Frames);
                 editor.putInt("MinN", seekBar_MinN.getProgress() + startValue_MinN);
                 editor.commit();
+                finish();
                 startActivity(nextScreen);
                }
         });
@@ -153,7 +154,7 @@ public class SettingsActivity extends Activity {
                 ContextThemeWrapper ctw = new ContextThemeWrapper(arg0.getContext(), R.style.Theme_AppCompat_Dialog );
                 AlertDialog.Builder dlgAlert  = new AlertDialog.Builder(ctw);
                 dlgAlert.setMessage(helpText);
-                dlgAlert.setTitle("AmpelPilot");
+                dlgAlert.setTitle("Hilfe zu Ampel-Pilot");
                 dlgAlert.setPositiveButton("OK", null);
                 dlgAlert.setCancelable(true);
                 dlgAlert.create().show();
@@ -202,6 +203,12 @@ public class SettingsActivity extends Activity {
             }
         });
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
     }
 
     private float roundFloat(final float number, final int decimalPlaces) {
