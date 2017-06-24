@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "de.hsaugsburg.ampelpilot"
-        minSdkVersion 20
+        minSdkVersion 19
         targetSdkVersion 23
     }
 

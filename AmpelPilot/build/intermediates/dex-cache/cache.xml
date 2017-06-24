@@ -2,6 +2,15 @@
 <items version="2" >
 
     <item
+        is-multidex="false"
+        jar="C:\Users\Maximilian\Documents\GitLab\Ampel-Assistenzsystem\Ampel-Assistenzsystem\AmpelPilot\openCVLibrary300\build\intermediates\bundles\default\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="30b8ea279953dbdd7b2f72828b0dd7b292d2c5c9">
+        <dex dex="C:\Users\Maximilian\Documents\GitLab\Ampel-Assistenzsystem\Ampel-Assistenzsystem\AmpelPilot\AmpelPilot\build\intermediates\pre-dexed\debug\classes_a407fbac16f75cd7667ec755850bf498d3ce1ed5.jar" />
+    </item>
+    <item
         is-multidex="true"
         jar="C:\Users\Maximilian\Documents\GitLab\Ampel-Assistenzsystem\Ampel-Assistenzsystem\AmpelPilot\AmpelPilot\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
@@ -16,7 +25,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="886a1118a0a39410233e76ec09197a67dc075f6d">
+        sha1="563967279b8f12a4c9dae1751e54a111c767d75b">
         <dex dex="C:\Users\Maximilian\Documents\GitLab\Ampel-Assistenzsystem\Ampel-Assistenzsystem\AmpelPilot\AmpelPilot\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_65e6126656c97a136eccca1b8353f470489091b8\classes.dex" />
     </item>
 

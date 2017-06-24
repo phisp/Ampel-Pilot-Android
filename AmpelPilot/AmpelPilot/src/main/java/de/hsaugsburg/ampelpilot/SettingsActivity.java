@@ -1,11 +1,13 @@
 package de.hsaugsburg.ampelpilot;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.ContextThemeWrapper;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -28,7 +30,23 @@ public class SettingsActivity extends Activity {
     private int startValue_Scale = 1;
     private int startValue_MinN = 3;
 
+    private String helpText = "Bitte halten Sie das Handy im Landschaftsmodus und halten Sie die Kamera Richtung Ampel.\n" +
+            "\n" +
+            "Um die Ampel wird ein roter oder grüner Kasten gezeichnet und " +
+            "eine Stimme teilt Ihnen mit ob die Ampel Rot oder Grün ist.\n" +
+            "\n" +
+            "Falls Sie das Handy falsch halten wird es vibrieren und eine Sprachnachricht wird abgespielt.\n" +
+            "\n" +
+            "In den Settings können Sie die Werte zur Erkennung umstellen. ";
 
+    private String helpTextScale = "Standard Wert: 2\n" + "\nJe kleiner der Wert ist, umso genauer wird nach einer Ampel gesucht.\n"
+            + "Allerdings wird die App dadurch langsamer.";
+
+    private String helpTextMinN = "Standard Wert: 5\n" + "\nJe größer der Wert ist, umso genauer muss die App eine Amepl erkennen.\n"
+            + "";
+
+    private String helpTextFrames = "Standard Wert: 5\n" + "\nWert gibt an, wie oft eine Ampel erkannt werden muss," +
+            " bevor ein akustisches Signal ausgegeben wird.\n";
     private SharedPreferences prefs;
     private SharedPreferences.Editor editor;
 
@@ -62,7 +80,10 @@ public class SettingsActivity extends Activity {
 
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                text_Scale.setText( getString(R.string.Text_SeekBar)+ roundFloat(getConvertedValue(progress) + startValue_Scale,2));
+                if(progress==0){
+                    progress=1;
+                }
+                text_Scale.setText( getString(R.string.Text_SeekBar) + roundFloat(getConvertedValue(progress) + startValue_Scale,2));
 
             }
 
@@ -123,8 +144,64 @@ public class SettingsActivity extends Activity {
                 editor.putInt("MinN", seekBar_MinN.getProgress() + startValue_MinN);
                 editor.commit();
                 startActivity(nextScreen);
+               }
+        });
+        Button btnHelp = (Button) findViewById(R.id.btnHelp);
+        btnHelp.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View arg0){
+
+                ContextThemeWrapper ctw = new ContextThemeWrapper(arg0.getContext(), R.style.Theme_AppCompat_Dialog );
+                AlertDialog.Builder dlgAlert  = new AlertDialog.Builder(ctw);
+                dlgAlert.setMessage(helpText);
+                dlgAlert.setTitle("AmpelPilot");
+                dlgAlert.setPositiveButton("OK", null);
+                dlgAlert.setCancelable(true);
+                dlgAlert.create().show();
             }
-     });
+        });
+
+        Button btnHelpFrames = (Button) findViewById(R.id.helpButtonFrames);
+        btnHelpFrames.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View arg0){
+
+                ContextThemeWrapper ctw = new ContextThemeWrapper(arg0.getContext(), R.style.Theme_AppCompat_Dialog );
+                AlertDialog.Builder dlgAlert  = new AlertDialog.Builder(ctw);
+                dlgAlert.setMessage(helpTextFrames);
+                dlgAlert.setTitle("Frames");
+                dlgAlert.setPositiveButton("OK", null);
+                dlgAlert.setCancelable(true);
+                dlgAlert.create().show();
+            }
+        });
+
+        Button btnHelpMinN = (Button) findViewById(R.id.helpButtonMinN);
+        btnHelpMinN.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View arg0){
+
+                ContextThemeWrapper ctw = new ContextThemeWrapper(arg0.getContext(), R.style.Theme_AppCompat_Dialog );
+                AlertDialog.Builder dlgAlert  = new AlertDialog.Builder(ctw);
+                dlgAlert.setMessage(helpTextMinN);
+                dlgAlert.setTitle("MinNeighbours");
+                dlgAlert.setPositiveButton("OK", null);
+                dlgAlert.setCancelable(true);
+                dlgAlert.create().show();
+            }
+        });
+
+        Button btnHelpScale = (Button) findViewById(R.id.helpButtonScale);
+        btnHelpScale.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View arg0){
+
+                ContextThemeWrapper ctw = new ContextThemeWrapper(arg0.getContext(), R.style.Theme_AppCompat_Dialog );
+                AlertDialog.Builder dlgAlert  = new AlertDialog.Builder(ctw);
+                dlgAlert.setMessage(helpTextScale);
+                dlgAlert.setTitle("ScaleFactor");
+                dlgAlert.setPositiveButton("OK", null);
+                dlgAlert.setCancelable(true);
+                dlgAlert.create().show();
+            }
+        });
+
     }
 
     private float roundFloat(final float number, final int decimalPlaces) {
