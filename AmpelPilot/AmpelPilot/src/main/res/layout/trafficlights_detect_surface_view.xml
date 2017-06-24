@@ -17,31 +17,4 @@
         android:layout_marginStart="25dp"
         android:text="@string/settings" />
 
-    <TextView
-        android:id="@+id/x"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/settingsbtn"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="17dp"
-        android:text="TextView" />
-
-    <TextView
-        android:id="@+id/y"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/x"
-        android:layout_marginStart="36dp"
-        android:layout_toEndOf="@+id/x"
-        android:text="TextView" />
-
-    <TextView
-        android:id="@+id/z"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/y"
-        android:layout_marginStart="37dp"
-        android:layout_toEndOf="@+id/y"
-        android:text="TextView" />
-
 </RelativeLayout>

@@ -1,22 +1,22 @@
 package de.hsaugsburg.ampelpilot;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
-import android.provider.Settings;
 import android.speech.tts.TextToSpeech;
 import android.util.Log;
+import android.view.ContextThemeWrapper;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.TextView;
 
 import org.opencv.android.BaseLoaderCallback;
 import org.opencv.android.CameraBridgeViewBase;
@@ -24,7 +24,6 @@ import org.opencv.android.CameraBridgeViewBase.CvCameraViewFrame;
 import org.opencv.android.CameraBridgeViewBase.CvCameraViewListener2;
 import org.opencv.android.LoaderCallbackInterface;
 import org.opencv.android.OpenCVLoader;
-import org.opencv.core.Core;
 import org.opencv.core.CvType;
 import org.opencv.core.Mat;
 import org.opencv.core.MatOfRect;
@@ -33,9 +32,6 @@ import org.opencv.core.Scalar;
 import org.opencv.core.Size;
 import org.opencv.imgproc.Imgproc;
 import org.opencv.objdetect.CascadeClassifier;
-import android.support.v4.app.ActivityCompat;
-import android.Manifest;
-
 
 
 import android.os.Vibrator;
@@ -46,11 +42,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Locale;
 
-import static android.R.attr.button;
-
 public class LdActivity extends Activity implements CvCameraViewListener2, SensorEventListener{
 
-    public static final int MY_PERMISSIONS_REQUEST_CAMERA = 100;
     private static final String    TAG                 = "OCVSample::Activity";
     private static final Scalar GREEN_RECT_COLOR = new Scalar(0, 255, 0, 255);
     private static final Scalar    RED_RECT_COLOR     = new Scalar(255, 0, 0, 255);
@@ -61,11 +54,9 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
     private  LightPeriod lightred = new LightPeriod();
     long SytsemTime = System.currentTimeMillis();
     private TextToSpeech tts;
-    //status check code
-    private int MY_DATA_CHECK_CODE = 0;
+
 
     private Mat                    mRgba;
-    private Mat                    mGray;
     private File                   mCascadeFileGreen;
     private File                   mCascadeFileRed;
     private CascadeClassifier mJavaDetectorGreen;
@@ -78,24 +69,28 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
     Vibrator v;
 
 
-    private TextView x;
-    private TextView y;
-    private TextView z;
+    private String helpText = "Bitte halten Sie das Handy im Landschaftsmodus und halten Sie die Kamera Richtung Ampel.\n" +
+            "\n" +
+            "Um die Ampel wird ein roter oder grüner Kasten gezeichnet und" +
+            "eine Stimme teilt Ihnen mit ob die Ampel Rot oder Grün ist.\n" +
+            "\n" +
+            "Falls Sie das Handy falsch halten wird es vibrieren und eine Sprachnachricht wird abgespielt.\n" +
+            "\n" +
+            "In den Settings können Sie die Werte zur Erkennung umstellen. ";
+
 
     private double                  scaleFactor;
     private int                     minNeighbours;
-
-    private double                  scaleFactorRED;
-    private int                     minNeighboursRED;
 
 
     private int                    mDetectorType       = JAVA_DETECTOR;
     private String[]               mDetectorName;
 
-    private int mTrafficLightSize = 0;
+    private SharedPreferences prefs;
+    private SharedPreferences.Editor editor;
+
 
     private CameraBridgeViewBase   mOpenCvCameraView;
-    private TextView mValue;
 
     long millis = System.currentTimeMillis();
 
@@ -109,7 +104,7 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
                     Log.i(TAG, "OpenCV loaded successfully");
                     try {
                         // load cascade file from application resources
-                        InputStream is = getResources().openRawResource(R.raw.green_cascade);
+                        InputStream is = getResources().openRawResource(R.raw.green);
                         File cascadeDir = getDir("cascade", Context.MODE_PRIVATE);
                         mCascadeFileGreen = new File(cascadeDir, "cascade_green.xml");
                         FileOutputStream os = new FileOutputStream(mCascadeFileGreen);
@@ -123,9 +118,9 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
                         os.close();
 
                         // load cascade file from application resources
-                        InputStream ise = getResources().openRawResource(R.raw.red_cascade2);
-                        File cascadeDirGreen = getDir("cascade", Context.MODE_PRIVATE);
-                        mCascadeFileRed = new File(cascadeDirGreen, "cascade_red.xml");
+                        InputStream ise = getResources().openRawResource(R.raw.red);
+                        File cascadeDirRed = getDir("cascade", Context.MODE_PRIVATE);
+                        mCascadeFileRed = new File(cascadeDirRed, "cascade_red.xml");
                         FileOutputStream ose = new FileOutputStream(mCascadeFileRed);
 
                         while ((bytesRead = ise.read(buffer)) != -1) {
@@ -149,7 +144,7 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
                             Log.i(TAG, "Loaded cascade classifier from " + mCascadeFileRed.getAbsolutePath());
 
                         cascadeDir.delete();
-                        cascadeDirGreen.delete();
+                        cascadeDirRed.delete();
 
                     } catch (IOException e) {
                         e.printStackTrace();
@@ -185,6 +180,9 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
         Log.i(TAG, "called onCreate");
         super.onCreate(savedInstanceState);
 
+        prefs = this.getSharedPreferences(
+                "de.hsaugsburg.ampelpilot", Context.MODE_PRIVATE);
+        editor = prefs.edit();
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         tts = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
@@ -195,15 +193,32 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
                     if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
                         Log.e("TTS", "This Language is not supported");
                     }
-                    //speak("App gestartet");
+                   // speak("App gestartet");
 
                 } else {
                     Log.e("TTS", "Initilization Failed!");
                 }
             }
         });
-        setContentView(R.layout.trafficlights_detect_surface_view);
+        // Debug Modus...
+       // if(true){
+        if(prefs.getBoolean("firstStart",true)){
+            speak("TEST TEST TEST");
+            editor.putBoolean("firstStart",false);
+            editor.commit();
 
+            ContextThemeWrapper ctw = new ContextThemeWrapper(this, R.style.Theme_AppCompat_Dialog);
+            AlertDialog.Builder dlgAlert  = new AlertDialog.Builder(ctw);
+            dlgAlert.setMessage(helpText);
+            dlgAlert.setTitle("AmpelPilot");
+            dlgAlert.setPositiveButton("OK", null);
+            dlgAlert.setCancelable(true);
+            dlgAlert.create().show();
+
+        }
+
+
+        setContentView(R.layout.trafficlights_detect_surface_view);
         mSensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
         accelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         magnetometer = mSensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
@@ -212,24 +227,21 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
         mOpenCvCameraView.setCvCameraViewListener(this);
         Button btnSettings = (Button) findViewById(R.id.settingsbtn);
 
-        x = (TextView) findViewById(R.id.x);
-        y = (TextView) findViewById(R.id.y);
-        z = (TextView) findViewById(R.id.z);
 
-        Intent i = getIntent();
-        minNeighbours = i.getIntExtra("MinNeighbours",15);
-        scaleFactor = i.getDoubleExtra("ScaleFactor",15);
+        minNeighbours = prefs.getInt("MinN",5);
+        scaleFactor = prefs.getFloat("Scale",2);
+        lightgreen.setAmountint(prefs.getInt("Frames",7));
 
-        minNeighboursRED = i.getIntExtra("MinNeighboursRED",15);
-        scaleFactorRED = i.getDoubleExtra("ScaleFactorRED",15);
 
         v = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
-        // Vibrate for 500 milliseconds
-        v.vibrate(500);
+        // Vibrate for 50 milliseconds
+        v.vibrate(50);
 
         btnSettings.setOnClickListener(new View.OnClickListener(){
             public void onClick(View arg0){
-                finish();
+                Intent nextScreen = new Intent(getApplicationContext(), SettingsActivity.class);
+
+                startActivity(nextScreen);
             }
         });
 
@@ -271,20 +283,15 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
     }
 
     public void onCameraViewStarted(int width, int height) {
-        mGray = new Mat(height, width, CvType.CV_8UC4);
         mRgba = new Mat(height, width, CvType.CV_8UC4);
-        mRgbaT = new Mat(height, width, CvType.CV_8UC4);
-        mRgbaF = new Mat(height, width, CvType.CV_8UC4);
     }
 
     public void onCameraViewStopped() {
-        mGray.release();
         mRgba.release();
     }
 
     public Mat onCameraFrame(CvCameraViewFrame inputFrame) {
         mRgba = inputFrame.rgba();
-        mGray = inputFrame.gray();
 
         //Core.transpose(mRgba, mRgbaT);
         //Imgproc.resize(mRgbaT, mRgbaF, mRgbaF.size(), 0,0, 0);
@@ -311,7 +318,7 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
                         new Size(20, 40), new Size(200,400));
             }
             if(mJavaDetectorRed!= null){
-                mJavaDetectorRed.detectMultiScale(mRgba, red, scaleFactorRED, minNeighboursRED, 0,
+                mJavaDetectorRed.detectMultiScale(mRgba, red, scaleFactor, minNeighbours, 0,
                         new Size(20, 40), new Size(200,400));
             }
         }
@@ -381,11 +388,6 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
                 float azimut = orientation[0]; // orientation contains: azimut, pitch and roll
                 float pitch = orientation[1]; //roll
                 float roll = orientation[2];
-
-
-                x.setText("" + roll);
-                y.setText("" + pitch);
-                z.setText("" + azimut);
 
 
                 double diffRoll = 0.6;

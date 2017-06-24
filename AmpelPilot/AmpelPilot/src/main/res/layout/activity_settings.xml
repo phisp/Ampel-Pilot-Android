@@ -5,45 +5,83 @@
     android:layout_height="fill_parent"
     android:background="@android:color/darker_gray"
     android:orientation="vertical"
-    tools:context="de.hsaugsburg.ampelpilot.SettingsActivity">
+    tools:context="de.hsaugsburg.ampelpilot.SettingsActivity"
+    android:weightSum="1">
+
+    <TextView
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="ScaleFactor"
+    android:textColor="@android:color/black"
+    android:textSize="24sp" />
 
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="ScaleFactor"
-        android:textColor="@android:color/black" />
+        android:id="@+id/text_Scale"
+        android:text="Aktueller Wert ist: "
+        android:textColor="@android:color/black"
+        />
 
     <SeekBar
         android:id="@+id/seekBar_Scale"
         android:layout_width="match_parent"
-        android:min="5"
-        android:max="10"
+        android:max="20"
         android:layout_height="wrap_content" />
-
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.1" />
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:textSize="24sp"
         android:text="MinNeighbours"
         android:textColor="@android:color/black" />
+    <TextView
+        android:id="@+id/text_MinN"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Aktueller Wert ist: "
+        android:textColor="@android:color/black"
+        />
 
     <SeekBar
         android:id="@+id/seekBar_MinN"
         android:layout_width="match_parent"
 
-        android:max="10"
+        android:max="4"
         android:layout_height="wrap_content" />
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.1" />
 
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textColor="@android:color/black"
+        android:textSize="24sp"
         android:text="Dauer bis zur Erkennung" />
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/text_Frames"
+        android:text="Aktueller Wert ist: "
+        android:textColor="@android:color/black"
+        />
 
     <SeekBar
         android:id="@+id/seekBar_Frames"
         android:layout_width="match_parent"
+        android:max="7"
         android:layout_height="wrap_content" />
 
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.7" />
 
     <Button
         android:id="@+id/btnGo"
