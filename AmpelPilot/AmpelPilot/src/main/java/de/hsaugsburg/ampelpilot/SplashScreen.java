@@ -12,6 +12,7 @@ import android.provider.Settings;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 
 
 public class SplashScreen extends Activity {
@@ -27,12 +28,13 @@ public class SplashScreen extends Activity {
     }
 
     @Override
-    protected void onStart(){
+    protected void onStart() {
         super.onStart();
 
         ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, MY_PERMISSIONS_REQUEST_CAMERA);
 
     }
+
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         if (permissions.length > 0)
@@ -91,8 +93,8 @@ public class SplashScreen extends Activity {
 
         super.onResume();
 
-
-        if (cameraPermission) {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED)
+        {
             startCameraActivity();
         }
     }
