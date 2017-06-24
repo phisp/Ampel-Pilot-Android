@@ -469,4 +469,9 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
 
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+    }
 }
