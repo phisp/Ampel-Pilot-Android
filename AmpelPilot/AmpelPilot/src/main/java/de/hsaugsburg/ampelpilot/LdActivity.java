@@ -24,6 +24,7 @@ import org.opencv.android.CameraBridgeViewBase.CvCameraViewFrame;
 import org.opencv.android.CameraBridgeViewBase.CvCameraViewListener2;
 import org.opencv.android.LoaderCallbackInterface;
 import org.opencv.android.OpenCVLoader;
+import org.opencv.core.Core;
 import org.opencv.core.CvType;
 import org.opencv.core.Mat;
 import org.opencv.core.MatOfRect;
@@ -68,6 +69,10 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
     Sensor magnetometer;
     Vibrator v;
 
+    static {
+        //System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
+        OpenCVLoader.initDebug();
+    }
 
     private String helpText = "Bitte halten Sie das Handy im Landschaftsmodus und halten Sie die Kamera Richtung Ampel.\n" +
             "\n" +
@@ -93,6 +98,8 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
     private CameraBridgeViewBase mOpenCvCameraView;
 
     long millis = System.currentTimeMillis();
+
+    private static boolean openCvInit;
 
     private BaseLoaderCallback mLoaderCallback = new BaseLoaderCallback(this) {
         @Override
@@ -185,21 +192,26 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
         editor = prefs.edit();
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-        tts = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
-            @Override
-            public void onInit(int status) {
-                if (status == TextToSpeech.SUCCESS) {
-                    int result = tts.setLanguage(Locale.GERMANY);
-                    if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
-                        Log.e("TTS", "This Language is not supported");
-                    }
-                    // speak("App gestartet");
+        try {
+            tts = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
+                @Override
+                public void onInit(int status) {
+                    if (status == TextToSpeech.SUCCESS) {
+                        int result = tts.setLanguage(Locale.GERMANY);
+                        if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
+                            Log.e("TTS", "This Language is not supported");
+                        }
+                        // speak("App gestartet");
 
-                } else {
-                    Log.e("TTS", "Initilization Failed!");
+                    } else {
+                        Log.e("TTS", "Initilization Failed!");
+                    }
                 }
-            }
-        });
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         // Debug Modus...
         // if(true){
         if (prefs.getBoolean("firstStart", true)) {
@@ -216,7 +228,6 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
             dlgAlert.create().show();
 
         }
-
 
         setContentView(R.layout.trafficlights_detect_surface_view);
         mSensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
@@ -245,6 +256,15 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
             }
         });
 
+        if (!openCvInit) {
+            Log.d(TAG, "Internal OpenCV library not found. Using OpenCV Manager for initialization");
+//            OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_3_2_0, this, mLoaderCallback);
+      mLoaderCallback.onManagerConnected(LoaderCallbackInterface.SUCCESS);
+
+        } else {
+            Log.d(TAG, "OpenCV library found inside package. Using it!");
+            mLoaderCallback.onManagerConnected(LoaderCallbackInterface.SUCCESS);
+        }
 
     }
 
@@ -263,13 +283,7 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
         super.onResume();
         mSensorManager.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_UI);
         mSensorManager.registerListener(this, magnetometer, SensorManager.SENSOR_DELAY_UI);
-        if (!OpenCVLoader.initDebug()) {
-            Log.d(TAG, "Internal OpenCV library not found. Using OpenCV Manager for initialization");
-            OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_3_0_0, this, mLoaderCallback);
-        } else {
-            Log.d(TAG, "OpenCV library found inside package. Using it!");
-            mLoaderCallback.onManagerConnected(LoaderCallbackInterface.SUCCESS);
-        }
+
     }
 
     public void onDestroy() {
@@ -387,8 +401,8 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
                 double diffPitch = 0.2;
 
 
-                //roll kleiner 1.4
-                double valueRoll = 1.4;
+                //roll kleiner 1.28
+                double valueRoll = 1.28;
                 if ((abs(roll) <= valueRoll) && (newMillis > millis + 1500)) {
                     float t = (150 / (abs(roll)) - 20);
                     v.vibrate((long) (t));

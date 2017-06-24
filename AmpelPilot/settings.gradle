@@ -1,2 +1,3 @@
 include ':openCVLibrary300'
 include ':AmpelPilot'
+include ':openCVLibrary320'

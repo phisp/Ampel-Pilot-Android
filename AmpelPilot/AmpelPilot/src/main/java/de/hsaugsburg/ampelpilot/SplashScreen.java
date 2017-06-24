@@ -7,32 +7,28 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Bundle;
 import android.os.Handler;
 import android.provider.Settings;
-import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 
 
 public class SplashScreen extends Activity {
+    private static final String TAG = "SplashScreen";
     public static final int MY_PERMISSIONS_REQUEST_CAMERA = 100;
-    private boolean cameraPermission;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
-
-
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-
         ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, MY_PERMISSIONS_REQUEST_CAMERA);
-
     }
 
     @Override
@@ -40,10 +36,10 @@ public class SplashScreen extends Activity {
         if (permissions.length > 0)
             switch (permissions[0]) {
                 case Manifest.permission.CAMERA:
-                    if (cameraPermission = grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                         // permission granted, onResume will start next activity
-
                     } else {
+                        // permission denied by the user
                         new Handler().post(new Runnable() {
                             @Override
                             public void run() {
@@ -92,9 +88,7 @@ public class SplashScreen extends Activity {
     protected void onResume() {
 
         super.onResume();
-
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED)
-        {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
             startCameraActivity();
         }
     }
@@ -104,5 +98,4 @@ public class SplashScreen extends Activity {
         startActivity(i);
         finish();
     }
-
 }
