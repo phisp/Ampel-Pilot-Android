@@ -401,8 +401,8 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
                 double diffPitch = 0.2;
 
 
-                //roll kleiner 1.28
-                double valueRoll = 1.28;
+                //roll kleiner 1.25
+                double valueRoll = 1.25;
                 if ((abs(roll) <= valueRoll) && (newMillis > millis + 1500)) {
                     float t = (150 / (abs(roll)) - 20);
                     v.vibrate((long) (t));
