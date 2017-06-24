@@ -42,23 +42,23 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Locale;
 
-public class LdActivity extends Activity implements CvCameraViewListener2, SensorEventListener{
+public class LdActivity extends Activity implements CvCameraViewListener2, SensorEventListener {
 
-    private static final String    TAG                 = "OCVSample::Activity";
+    private static final String TAG = "OCVSample::Activity";
     private static final Scalar GREEN_RECT_COLOR = new Scalar(0, 255, 0, 255);
-    private static final Scalar    RED_RECT_COLOR     = new Scalar(255, 0, 0, 255);
-    public static final int        JAVA_DETECTOR       = 0;
+    private static final Scalar RED_RECT_COLOR = new Scalar(255, 0, 0, 255);
+    public static final int JAVA_DETECTOR = 0;
     private SensorManager mSensorManager;
 
-    private  LightPeriod lightgreen = new LightPeriod();
-    private  LightPeriod lightred = new LightPeriod();
+    private LightPeriod lightgreen = new LightPeriod();
+    private LightPeriod lightred = new LightPeriod();
     long SytsemTime = System.currentTimeMillis();
     private TextToSpeech tts;
 
 
-    private Mat                    mRgba;
-    private File                   mCascadeFileGreen;
-    private File                   mCascadeFileRed;
+    private Mat mRgba;
+    private File mCascadeFileGreen;
+    private File mCascadeFileRed;
     private CascadeClassifier mJavaDetectorGreen;
     private CascadeClassifier mJavaDetectorRed;
 
@@ -79,28 +79,27 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
             "In den Settings können Sie die Werte zur Erkennung umstellen. ";
 
 
-    private double                  scaleFactor;
-    private int                     minNeighbours;
+    private double scaleFactor;
+    private int minNeighbours;
 
 
-    private int                    mDetectorType       = JAVA_DETECTOR;
-    private String[]               mDetectorName;
+    private int mDetectorType = JAVA_DETECTOR;
+    private String[] mDetectorName;
 
     private SharedPreferences prefs;
     private SharedPreferences.Editor editor;
 
 
-    private CameraBridgeViewBase   mOpenCvCameraView;
+    private CameraBridgeViewBase mOpenCvCameraView;
 
     long millis = System.currentTimeMillis();
 
-    private BaseLoaderCallback  mLoaderCallback = new BaseLoaderCallback(this) {
+    private BaseLoaderCallback mLoaderCallback = new BaseLoaderCallback(this) {
         @Override
         public void onManagerConnected(int status) {
 
             switch (status) {
-                case LoaderCallbackInterface.SUCCESS:
-                {
+                case LoaderCallbackInterface.SUCCESS: {
                     Log.i(TAG, "OpenCV loaded successfully");
                     try {
                         // load cascade file from application resources
@@ -155,11 +154,12 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
                     mOpenCvCameraView.setClickable(false);
 
                     mOpenCvCameraView.enableView();
-                } break;
-                default:
-                {
+                }
+                break;
+                default: {
                     super.onManagerConnected(status);
-                } break;
+                }
+                break;
             }
         }
     };
@@ -193,7 +193,7 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
                     if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
                         Log.e("TTS", "This Language is not supported");
                     }
-                   // speak("App gestartet");
+                    // speak("App gestartet");
 
                 } else {
                     Log.e("TTS", "Initilization Failed!");
@@ -201,14 +201,14 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
             }
         });
         // Debug Modus...
-       // if(true){
-        if(prefs.getBoolean("firstStart",true)){
+        // if(true){
+        if (prefs.getBoolean("firstStart", true)) {
             speak("TEST TEST TEST");
-            editor.putBoolean("firstStart",false);
+            editor.putBoolean("firstStart", false);
             editor.commit();
 
             ContextThemeWrapper ctw = new ContextThemeWrapper(this, R.style.Theme_AppCompat_Dialog);
-            AlertDialog.Builder dlgAlert  = new AlertDialog.Builder(ctw);
+            AlertDialog.Builder dlgAlert = new AlertDialog.Builder(ctw);
             dlgAlert.setMessage(helpText);
             dlgAlert.setTitle("AmpelPilot");
             dlgAlert.setPositiveButton("OK", null);
@@ -219,7 +219,7 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
 
 
         setContentView(R.layout.trafficlights_detect_surface_view);
-        mSensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
+        mSensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         accelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         magnetometer = mSensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
 
@@ -228,17 +228,17 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
         Button btnSettings = (Button) findViewById(R.id.settingsbtn);
 
 
-        minNeighbours = prefs.getInt("MinN",5);
-        scaleFactor = prefs.getFloat("Scale",2);
-        lightgreen.setAmountint(prefs.getInt("Frames",7));
+        minNeighbours = prefs.getInt("MinN", 5);
+        scaleFactor = prefs.getFloat("Scale", 2);
+        lightgreen.setAmountint(prefs.getInt("Frames", 7));
 
 
         v = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
         // Vibrate for 50 milliseconds
         v.vibrate(50);
 
-        btnSettings.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View arg0){
+        btnSettings.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
                 Intent nextScreen = new Intent(getApplicationContext(), SettingsActivity.class);
 
                 startActivity(nextScreen);
@@ -249,8 +249,7 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
     }
 
     @Override
-    public void onPause()
-    {
+    public void onPause() {
         super.onPause();
         mSensorManager.unregisterListener(this);
         mSensorManager.unregisterListener(this);
@@ -259,13 +258,11 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
     }
 
 
-
     @Override
-    public void onResume()
-    {
+    public void onResume() {
         super.onResume();
-       mSensorManager.registerListener(this, accelerometer ,SensorManager.SENSOR_DELAY_UI);
-       mSensorManager.registerListener(this, magnetometer, SensorManager.SENSOR_DELAY_UI);
+        mSensorManager.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_UI);
+        mSensorManager.registerListener(this, magnetometer, SensorManager.SENSOR_DELAY_UI);
         if (!OpenCVLoader.initDebug()) {
             Log.d(TAG, "Internal OpenCV library not found. Using OpenCV Manager for initialization");
             OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_3_0_0, this, mLoaderCallback);
@@ -307,39 +304,36 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
 
         // resize to original:
         Imgproc.resize(cropped, cropped, orig);
-
-*/
+        */
         MatOfRect green = new MatOfRect();
         MatOfRect red = new MatOfRect();
 
         if (mDetectorType == JAVA_DETECTOR) {
-            if (mJavaDetectorGreen != null){
+            if (mJavaDetectorGreen != null) {
                 mJavaDetectorGreen.detectMultiScale(mRgba, green, scaleFactor, minNeighbours, 0, // TODO: objdetect.CV_HAAR_SCALE_IMAGE
-                        new Size(20, 40), new Size(200,400));
+                        new Size(20, 40), new Size(200, 400));
             }
-            if(mJavaDetectorRed!= null){
+            if (mJavaDetectorRed != null) {
                 mJavaDetectorRed.detectMultiScale(mRgba, red, scaleFactor, minNeighbours, 0,
-                        new Size(20, 40), new Size(200,400));
+                        new Size(20, 40), new Size(200, 400));
             }
-        }
-        else {
+        } else {
             Log.e(TAG, "Detection method is not selected!");
         }
 
         Rect[] greenArray = green.toArray();
         lightgreen.addpoint(greenArray);
-        if(lightgreen.checklight()){
-            Log.w("step","onCameraFrame: "+ System.currentTimeMillis() +"   " +SytsemTime);
-            if((System.currentTimeMillis() - SytsemTime )>2000){
+        if (lightgreen.checklight()) {
+            Log.w("step", "onCameraFrame: " + System.currentTimeMillis() + "   " + SytsemTime);
+            if ((System.currentTimeMillis() - SytsemTime) > 2000) {
                 speak("Es ist Grün");
-                SytsemTime=System.currentTimeMillis();
+                SytsemTime = System.currentTimeMillis();
             }
 
 
-            Log.w("step","onCameraFrame:  #################### Grün wurde erkannt bÄÄÄÄÄm");
+            Log.w("step", "onCameraFrame:  #################### Grün wurde erkannt bÄÄÄÄÄm");
         }
-        for (int i = 0; i < greenArray.length; i++)
-        {
+        for (int i = 0; i < greenArray.length; i++) {
             Imgproc.rectangle(mRgba, greenArray[i].tl(), greenArray[i].br(),
                     GREEN_RECT_COLOR, 3);
         }
@@ -351,10 +345,9 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
                 speak("Warte!");
                 SytsemTime=System.currentTimeMillis();
             }
-            Log.w("step","onCameraFrame:  #################### Red wurde erkannt bÄÄÄÄÄm");
+            Log.w("step", "onCameraFrame:  #################### Red wurde erkannt bÄÄÄÄÄm");
         }
-        for (int i = 0; i < redArray.length; i++)
-        {
+        for (int i = 0; i < redArray.length; i++) {
             Imgproc.rectangle(mRgba, redArray[i].tl(), redArray[i].br(),
                     RED_RECT_COLOR, 3);
         }
@@ -363,17 +356,17 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
     }
 
 
-    private void speak(String text){
+    private void speak(String text) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             tts.speak(text, TextToSpeech.QUEUE_FLUSH, null, null);
-        }else{
+        } else {
             tts.speak(text, TextToSpeech.QUEUE_FLUSH, null);
         }
     }
 
     public void onSensorChanged(SensorEvent event) {
 
-        long newMillis = System.currentTimeMillis() ;
+        long newMillis = System.currentTimeMillis();
         if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER)
             mGravity = event.values;
         if (event.sensor.getType() == Sensor.TYPE_MAGNETIC_FIELD)
@@ -397,35 +390,35 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
                 //roll kleiner 1.4
                 double valueRoll = 1.4;
                 if ((abs(roll) <= valueRoll) && (newMillis > millis + 1500)) {
-                    float t = ( 150/ (abs(roll)) -20);
+                    float t = (150 / (abs(roll)) - 20);
                     v.vibrate((long) (t));
                     millis = newMillis;
                     if((System.currentTimeMillis() - SytsemTime )>3000){
                         speak("Winkel zu Niedrig");
-                        SytsemTime=System.currentTimeMillis();
+                        SytsemTime = System.currentTimeMillis();
                     }
                 }
 
                 //roll größer 2
                 if ((abs(roll) >= valueRoll + diffRoll) && (newMillis > millis + 1500)) {
-                    float t = ( (abs(roll) *100) -50);
+                    float t = ((abs(roll) * 100) - 50);
                     v.vibrate((long) (t));
                     millis = newMillis;
                     if((System.currentTimeMillis() - SytsemTime )>3000){
                         speak("Winkel zu Hoch");
-                        SytsemTime=System.currentTimeMillis();
+                        SytsemTime = System.currentTimeMillis();
                     }
                 }
 
                 //pitch größer 0,2
                 double valuePitch = 0;
-                if ((( pitch <= valuePitch - diffPitch)) && (newMillis > millis + 1500)) {
+                if (((pitch <= valuePitch - diffPitch)) && (newMillis > millis + 1500)) {
                     float t = ((abs(pitch) * 1000) - 50);
                     v.vibrate((long) (t));
                     millis = newMillis;
                     if((System.currentTimeMillis() - SytsemTime )>3000){
                         speak("Zu weit nach rechts geneigt");
-                        SytsemTime=System.currentTimeMillis();
+                        SytsemTime = System.currentTimeMillis();
                     }
                 }
                 if (((pitch >= valuePitch + diffPitch)) && (newMillis > millis + 1500)) {
@@ -434,19 +427,19 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
                     millis = newMillis;
                     if((System.currentTimeMillis() - SytsemTime )>3000){
                         speak("Zu weit nach links geneigt");
-                        SytsemTime=System.currentTimeMillis();
+                        SytsemTime = System.currentTimeMillis();
                     }
                 }
 
                 // Azimut größer 2
                 double valueAzimut = 2.3;
                 if ((abs(azimut) >= valueAzimut) && (newMillis > millis + 1500)) {
-                    float t = ( 500);
+                    float t = (500);
                     v.vibrate((long) (t));
                     millis = newMillis;
                     if((System.currentTimeMillis() - SytsemTime )>2000){
                         speak("Drehen Sie das Handy");
-                        SytsemTime=System.currentTimeMillis();
+                        SytsemTime = System.currentTimeMillis();
                     }
                 }
             }
