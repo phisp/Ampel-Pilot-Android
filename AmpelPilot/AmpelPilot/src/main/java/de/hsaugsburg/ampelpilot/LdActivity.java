@@ -71,7 +71,7 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
 
     private String helpText = "Bitte halten Sie das Handy im Landschaftsmodus und halten Sie die Kamera Richtung Ampel.\n" +
             "\n" +
-            "Um die Ampel wird ein roter oder grüner Kasten gezeichnet und" +
+            "Um die Ampel wird ein roter oder grüner Kasten gezeichnet und " +
             "eine Stimme teilt Ihnen mit ob die Ampel Rot oder Grün ist.\n" +
             "\n" +
             "Falls Sie das Handy falsch halten wird es vibrieren und eine Sprachnachricht wird abgespielt.\n" +
@@ -348,7 +348,7 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
         lightred.addpoint(redArray);
         if(lightred.checklight()){
             if(( System.currentTimeMillis()- SytsemTime )>2000){
-                speak("Es ist Rot");
+                speak("Warte!");
                 SytsemTime=System.currentTimeMillis();
             }
             Log.w("step","onCameraFrame:  #################### Red wurde erkannt bÄÄÄÄÄm");
@@ -400,7 +400,7 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
                     float t = ( 150/ (abs(roll)) -20);
                     v.vibrate((long) (t));
                     millis = newMillis;
-                    if((System.currentTimeMillis() - SytsemTime )>5000){
+                    if((System.currentTimeMillis() - SytsemTime )>3000){
                         speak("Winkel zu Niedrig");
                         SytsemTime=System.currentTimeMillis();
                     }
@@ -411,7 +411,7 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
                     float t = ( (abs(roll) *100) -50);
                     v.vibrate((long) (t));
                     millis = newMillis;
-                    if((System.currentTimeMillis() - SytsemTime )>5000){
+                    if((System.currentTimeMillis() - SytsemTime )>3000){
                         speak("Winkel zu Hoch");
                         SytsemTime=System.currentTimeMillis();
                     }
@@ -423,7 +423,7 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
                     float t = ((abs(pitch) * 1000) - 50);
                     v.vibrate((long) (t));
                     millis = newMillis;
-                    if((System.currentTimeMillis() - SytsemTime )>5000){
+                    if((System.currentTimeMillis() - SytsemTime )>3000){
                         speak("Zu weit nach rechts geneigt");
                         SytsemTime=System.currentTimeMillis();
                     }
@@ -432,7 +432,7 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
                     float t = ((abs(pitch) * 1000) - 50);
                     v.vibrate((long) (t));
                     millis = newMillis;
-                    if((System.currentTimeMillis() - SytsemTime )>5000){
+                    if((System.currentTimeMillis() - SytsemTime )>3000){
                         speak("Zu weit nach links geneigt");
                         SytsemTime=System.currentTimeMillis();
                     }
@@ -444,7 +444,7 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
                     float t = ( 500);
                     v.vibrate((long) (t));
                     millis = newMillis;
-                    if((System.currentTimeMillis() - SytsemTime )>5000){
+                    if((System.currentTimeMillis() - SytsemTime )>2000){
                         speak("Drehen Sie das Handy");
                         SytsemTime=System.currentTimeMillis();
                     }

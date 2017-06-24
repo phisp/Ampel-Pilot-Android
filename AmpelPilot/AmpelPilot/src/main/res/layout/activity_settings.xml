@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@android:color/darker_gray"
+    android:background="@android:color/black"
     android:orientation="vertical"
     tools:context="de.hsaugsburg.ampelpilot.SettingsActivity"
     android:weightSum="1">
@@ -12,7 +12,7 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:text="ScaleFactor"
-    android:textColor="@android:color/black"
+    android:textColor="@android:color/white"
     android:textSize="24sp" />
 
     <TextView
@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/text_Scale"
         android:text="Aktueller Wert ist: "
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/white"
         />
 
     <SeekBar
@@ -37,13 +37,13 @@
         android:layout_height="wrap_content"
         android:textSize="24sp"
         android:text="MinNeighbours"
-        android:textColor="@android:color/black" />
+        android:textColor="@android:color/white" />
     <TextView
         android:id="@+id/text_MinN"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Aktueller Wert ist: "
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/white"
         />
 
     <SeekBar
@@ -60,15 +60,16 @@
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/white"
         android:textSize="24sp"
-        android:text="Dauer bis zur Erkennung" />
+        android:text="Dauer bis zur Erkennung"
+        />
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/text_Frames"
         android:text="Aktueller Wert ist: "
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/white"
         />
 
     <SeekBar
@@ -87,12 +88,15 @@
         android:id="@+id/btnGo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Fertig" />
+        android:backgroundTint="@android:color/holo_orange_dark"
+        android:text="Fertig"
+        android:visibility="visible" />
 
     <Button
         android:id="@+id/btnHelp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="@android:color/holo_orange_dark"
         android:text="Hilfe" />
 </LinearLayout>
 
