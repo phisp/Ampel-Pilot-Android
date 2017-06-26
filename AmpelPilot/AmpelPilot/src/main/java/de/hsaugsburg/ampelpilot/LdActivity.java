@@ -74,14 +74,11 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
         OpenCVLoader.initDebug();
     }
 
-    private String helpText = "Bitte halten Sie das Handy im Landschaftsmodus und halten Sie die Kamera Richtung Ampel.\n" +
+    private String helpText = "Halten Sie das Handy im Landschaftsmodus. Falls Sie das Handy falsch halten wird es vibrieren und eine Sprachnachricht wird abgespielt.\n" +
             "\n" +
-            "Um die Ampel wird ein roter oder grüner Kasten gezeichnet und " +
-            "eine Stimme teilt Ihnen mit ob die Ampel Rot oder Grün ist.\n" +
+            "In den Settings können Sie die Werte zur Erkennung umstellen.\n" +
             "\n" +
-            "Falls Sie das Handy falsch halten wird es vibrieren und eine Sprachnachricht wird abgespielt.\n" +
-            "\n" +
-            "In den Settings können Sie die Werte zur Erkennung umstellen. ";
+            "Der Anbieter dieser App übernimmt keine Haftung für Sach- und Personenschäden, welche durch die Nutzung von „Ampel-Pilot“ entstehen.";
 
 
     private double scaleFactor;
@@ -246,7 +243,7 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
 
         v = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
         // Vibrate for 50 milliseconds
-        v.vibrate(50);
+        // v.vibrate(50);
 
         btnSettings.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
@@ -258,9 +255,8 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
 
         if (!openCvInit) {
             Log.d(TAG, "Internal OpenCV library not found. Using OpenCV Manager for initialization");
-//            OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_3_2_0, this, mLoaderCallback);
-      mLoaderCallback.onManagerConnected(LoaderCallbackInterface.SUCCESS);
-
+            // OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_3_2_0, this, mLoaderCallback);
+            mLoaderCallback.onManagerConnected(LoaderCallbackInterface.SUCCESS);
         } else {
             Log.d(TAG, "OpenCV library found inside package. Using it!");
             mLoaderCallback.onManagerConnected(LoaderCallbackInterface.SUCCESS);
@@ -275,6 +271,7 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
         mSensorManager.unregisterListener(this);
         if (mOpenCvCameraView != null)
             mOpenCvCameraView.disableView();
+        v.cancel();
     }
 
 
@@ -335,6 +332,21 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
             Log.e(TAG, "Detection method is not selected!");
         }
 
+        Rect[] redArray = red.toArray();
+        lightred.addpoint(redArray);
+        if (lightred.checklight()) {
+            if ((System.currentTimeMillis() - SytsemTime) > 2000) {
+                speak("Warte!");
+                SytsemTime = System.currentTimeMillis();
+            }
+            Log.w("step", "onCameraFrame:  #################### Red wurde erkannt bÄÄÄÄÄm");
+        }
+        for (int i = 0; i < redArray.length; i++) {
+            Imgproc.rectangle(mRgba, redArray[i].tl(), redArray[i].br(),
+                    RED_RECT_COLOR, 3);
+        }
+
+
         Rect[] greenArray = green.toArray();
         lightgreen.addpoint(greenArray);
         if (lightgreen.checklight()) {
@@ -351,21 +363,6 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
             Imgproc.rectangle(mRgba, greenArray[i].tl(), greenArray[i].br(),
                     GREEN_RECT_COLOR, 3);
         }
-
-        Rect[] redArray = red.toArray();
-        lightred.addpoint(redArray);
-        if(lightred.checklight()){
-            if(( System.currentTimeMillis()- SytsemTime )>2000){
-                speak("Warte!");
-                SytsemTime=System.currentTimeMillis();
-            }
-            Log.w("step", "onCameraFrame:  #################### Red wurde erkannt bÄÄÄÄÄm");
-        }
-        for (int i = 0; i < redArray.length; i++) {
-            Imgproc.rectangle(mRgba, redArray[i].tl(), redArray[i].br(),
-                    RED_RECT_COLOR, 3);
-        }
-
         return mRgba;
     }
 
@@ -405,9 +402,9 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
                 double valueRoll = 1.25;
                 if ((abs(roll) <= valueRoll) && (newMillis > millis + 1500)) {
                     float t = (150 / (abs(roll)) - 20);
-                    v.vibrate((long) (t));
+                    vibrate(t);
                     millis = newMillis;
-                    if((System.currentTimeMillis() - SytsemTime )>3000){
+                    if ((System.currentTimeMillis() - SytsemTime) > 3000) {
                         speak("Winkel zu Niedrig");
                         SytsemTime = System.currentTimeMillis();
                     }
@@ -416,9 +413,9 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
                 //roll größer 2
                 if ((abs(roll) >= valueRoll + diffRoll) && (newMillis > millis + 1500)) {
                     float t = ((abs(roll) * 100) - 50);
-                    v.vibrate((long) (t));
+                    vibrate(t);
                     millis = newMillis;
-                    if((System.currentTimeMillis() - SytsemTime )>3000){
+                    if ((System.currentTimeMillis() - SytsemTime) > 3000) {
                         speak("Winkel zu Hoch");
                         SytsemTime = System.currentTimeMillis();
                     }
@@ -428,18 +425,18 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
                 double valuePitch = 0;
                 if (((pitch <= valuePitch - diffPitch)) && (newMillis > millis + 1500)) {
                     float t = ((abs(pitch) * 1000) - 50);
-                    v.vibrate((long) (t));
+                    vibrate(t);
                     millis = newMillis;
-                    if((System.currentTimeMillis() - SytsemTime )>3000){
+                    if ((System.currentTimeMillis() - SytsemTime) > 3000) {
                         speak("Zu weit nach rechts geneigt");
                         SytsemTime = System.currentTimeMillis();
                     }
                 }
                 if (((pitch >= valuePitch + diffPitch)) && (newMillis > millis + 1500)) {
                     float t = ((abs(pitch) * 1000) - 50);
-                    v.vibrate((long) (t));
+                    vibrate(t);
                     millis = newMillis;
-                    if((System.currentTimeMillis() - SytsemTime )>3000){
+                    if ((System.currentTimeMillis() - SytsemTime) > 3000) {
                         speak("Zu weit nach links geneigt");
                         SytsemTime = System.currentTimeMillis();
                     }
@@ -449,15 +446,21 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
                 double valueAzimut = 2.3;
                 if ((abs(azimut) >= valueAzimut) && (newMillis > millis + 1500)) {
                     float t = (500);
-                    v.vibrate((long) (t));
+                    vibrate(t);
                     millis = newMillis;
-                    if((System.currentTimeMillis() - SytsemTime )>2000){
+                    if ((System.currentTimeMillis() - SytsemTime) > 2000) {
                         speak("Drehen Sie das Handy");
                         SytsemTime = System.currentTimeMillis();
                     }
                 }
             }
         }
+    }
+
+    private void vibrate(float t) {
+        // limit to max 1000 milliseconds
+        t = (t <= 1000) ? t : 1000;
+        v.vibrate((long) (t));
     }
 
     public static float abs(float a) {

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="de.hsaugsburg.ampelpilot"
-    android:versionCode="301"
-    android:versionName="3.01">
+    android:versionCode="302"
+    android:versionName="0.01">
 
-    <uses-sdk android:minSdkVersion="20" />
+    <uses-sdk android:minSdkVersion="19" />
 
     <supports-screens
         android:anyDensity="true"
