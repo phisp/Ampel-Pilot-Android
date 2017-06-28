@@ -143,9 +143,9 @@ public class SettingsActivity extends Activity {
                 editor.putInt("Frames",seekBar_Frames.getProgress() + startValue_Frames);
                 editor.putInt("MinN", seekBar_MinN.getProgress() + startValue_MinN);
                 editor.commit();
-                finish();
                 startActivity(nextScreen);
-               }
+                finish();
+            }
         });
         Button btnHelp = (Button) findViewById(R.id.btnHelp);
         btnHelp.setOnClickListener(new View.OnClickListener(){

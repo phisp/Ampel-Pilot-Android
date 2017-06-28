@@ -189,25 +189,6 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
         editor = prefs.edit();
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-        try {
-            tts = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
-                @Override
-                public void onInit(int status) {
-                    if (status == TextToSpeech.SUCCESS) {
-                        int result = tts.setLanguage(Locale.GERMANY);
-                        if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
-                            Log.e("TTS", "This Language is not supported");
-                        }
-                        // speak("App gestartet");
-
-                    } else {
-                        Log.e("TTS", "Initilization Failed!");
-                    }
-                }
-            });
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
 
         // Debug Modus...
         // if(true){
@@ -250,6 +231,7 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
                 Intent nextScreen = new Intent(getApplicationContext(), SettingsActivity.class);
 
                 startActivity(nextScreen);
+                finish();
             }
         });
 
@@ -262,6 +244,26 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
             mLoaderCallback.onManagerConnected(LoaderCallbackInterface.SUCCESS);
         }
 
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        tts = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int status) {
+                if (status == TextToSpeech.SUCCESS) {
+                    int result = tts.setLanguage(Locale.GERMANY);
+                    if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
+                        Log.e("TTS", "This Language is not supported");
+                    }
+                    // speak("App gestartet");
+
+                } else {
+                    Log.e("TTS", "Initilization Failed!");
+                }
+            }
+        });
     }
 
     @Override
@@ -281,6 +283,13 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
         mSensorManager.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_UI);
         mSensorManager.registerListener(this, magnetometer, SensorManager.SENSOR_DELAY_UI);
 
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+        tts.shutdown();
     }
 
     public void onDestroy() {
@@ -475,6 +484,6 @@ public class LdActivity extends Activity implements CvCameraViewListener2, Senso
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        finish();
+        //finish();
     }
 }
